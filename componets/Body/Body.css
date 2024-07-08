@@ -21,7 +21,7 @@
 
 .Interface {
     background-color: rgb(61 76 104);
-    padding-top: 150px;
+    padding-top: 110px;
     margin-top: 0px;
     padding-right: 30px;
     padding-bottom: 100px;
@@ -33,4 +33,125 @@
     /* background-image: url("https://northindiamarineacademy.in/wp-content/uploads/2022/09/g12.jpg"); */
     max-width: 100%;
     height: 500px;
+}
+
+#image-container .nav-button {
+    display: none;
+}
+
+#image-container .nav-button {
+    display: block;
+}
+
+.container {
+    background-color: #E94B3C;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+    padding-bottom: 150px !important;
+    margin-bottom: 0px;
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 1.2em;
+    margin-bottom: 50px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 20px;
+}
+
+.card {
+    background-color: #334E68;
+    color: white;
+    width: 19%;
+    padding-top: 5% !important;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.9em;
+}
+
+.testimonials-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.testimonials-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.testimonial {
+    background-color: #fff;
+    color: #4A4A87;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+}
+
+.testimonial .user {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.testimonial .user img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.testimonial .user-name {
+    font-weight: bold;
 }

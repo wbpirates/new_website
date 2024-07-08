@@ -46,21 +46,37 @@ const Navbar = () => {
         ))}
       </div> */}
       </div>
-      <nav id="navbar" style={{display:"flex", justifyContent:"space-between", alignItems:"center", paddingRight: "100px", paddingLeft: "100px" }}>
+      <nav id="navbar" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingRight: "100px", paddingLeft: "100px" }}>
         <div>
-            <Image
-              src={messageIcon}
-              alt="go top"
-              width={250}
-              height={140}
-              // onClick={() => goToBookingSection()}
-            />
+          <Image
+            src={messageIcon}
+            alt="go top"
+            width={240}
+            height={120}
+          // onClick={() => goToBookingSection()}
+          />
         </div>
         <div>
           {data.menu.map((item, index) => (
-            <a key={index} href="#">{item}</a>
+            <a
+              key={index}
+              href="#"
+              style={{
+                fontWeight: 400,
+                fontSize: "14px",
+                textDecoration: "none",
+                padding: "5px",
+                border: "2px solid transparent",
+                transition: "border 0.3s ease"
+              }}
+              onMouseEnter={(e) => e.target.style.border = "2px solid #E94B3C"}
+              onMouseLeave={(e) => e.target.style.border = "1px solid transparent"}
+            >
+              {item}
+            </a>
           ))}
         </div>
+
       </nav>
     </div>
 
