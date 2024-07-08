@@ -10,8 +10,6 @@ import messageIcon4 from "./Images/5.jpg"
 import messageIcon5 from "./Images/6.jpg"
 import { Button, Image } from "react-bootstrap"; 
 
-
-
 const Body = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [images, setImages] = useState([
