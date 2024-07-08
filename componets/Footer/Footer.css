@@ -1,0 +1,79 @@
+footer {
+    background-color: #34495e;
+    color: white;
+    padding: 20px 0;
+    
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer-bottom p {
+    margin: 5px 0;
+  }
+  
+
+
+  /* ----------------------------------------------------------------------------------/* styles.css */
+
+.fusion-social-network-icon {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .social-icon {
+    display: inline-block;
+  }
+  
+  .social-title {
+    position: absolute;
+    bottom: -20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Light white background color */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .social-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0); /* Transparent initially */
+    transition: background-color 0.3s ease;
+  }
+  
+  .fusion-social-network-icon:hover .social-title {
+    opacity: 1;
+  }
+  
+  .fusion-social-network-icon:hover .social-circle {
+    background-color: rgba(255, 255, 255, 0.5); /* Light white background color on hover */
+  }
