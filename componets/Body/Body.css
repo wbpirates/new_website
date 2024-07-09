@@ -17,6 +17,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding-right: 100px;
+    padding-left: 100px;
+    gap: 25px;
 }
 
 .Interface {
@@ -26,30 +30,36 @@
     padding-right: 30px;
     padding-bottom: 100px;
     margin-bottom: 0px;
-    padding-left: 30px;
+    padding-left: 30px;    
+    
+    padding-right: 120px;
+    padding-left: 120px;
+    gap: 25px;
+    flex-direction: column;
 }
-
+.interface-inner {
+    max-width: 1260px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .backgroundImage {
     /* background-image: url("https://northindiamarineacademy.in/wp-content/uploads/2022/09/g12.jpg"); */
     max-width: 100%;
     height: 500px;
 }
 
-#image-container .nav-button {
-    display: none;
-}
-
-#image-container .nav-button {
-    display: block;
-}
-
 .container {
-    background-color: #E94B3C;
+    background-color: #f1574d;
     color: white;
     text-align: center;
     padding: 50px 0;
     padding-bottom: 150px !important;
     margin-bottom: 0px;
+
+    padding-right: 100px;
+    padding-left: 100px;    
 }
 
 .container h1 {
@@ -61,13 +71,19 @@
     font-size: 1.2em;
     margin-bottom: 50px;
 }
-
+#image-container{
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
 .card-container {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
     margin: 0 20px;
+    max-width: 1260px;
+    margin: 0 auto;
 }
 
 .card {
@@ -96,25 +112,36 @@
     font-size: 0.9em;
 }
 
-.testimonials-section {
+.testimonials-section-wrapper {
     text-align: center;
     padding: 50px 20px;
+    background:  rgb(74, 74, 125);
+    padding-top: 150px;
 }
-
+.testimonial_wrapper {
+    flex: 0 0 30%;
+}
+.testimonials-section {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+.testimonials-section .headings-wrapper {
+    color: #fff;
+    margin-bottom: 40px;
+}
 .testimonials-section h2 {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 10px;
 }
 
 .testimonials-section p {
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 22px;
 }
 
 .testimonials {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -122,8 +149,6 @@
     background-color: #fff;
     color: #4A4A87;
     padding: 20px;
-    border-radius: 10px;
-    width: 250px;
     position: relative;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -132,7 +157,7 @@
     content: '';
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 35px;
     transform: translateX(-50%);
     border-width: 10px;
     border-style: solid;
@@ -154,4 +179,88 @@
 
 .testimonial .user-name {
     font-weight: bold;
+}
+
+button.nav-button{
+    background-color: rgba(0, 0, 0, .3);
+    width: 63px;
+    height: 63px;
+    /* display: none; */
+    opacity: 0;
+    z-index: 0;
+    position: absolute;
+    top: 42%;
+    color: #fff;
+    font-size: 36px;
+    transition: 0.5s;
+    border: none;
+}
+button.nav-button.previous{
+    left:0;
+}
+button.nav-button.next{
+    right: 0;
+}
+button.nav-button:hover{
+    background-color: rgba(0, 0, 0, .5);
+
+}
+#image-container:hover button.nav-button{
+    opacity: 1;
+    z-index: 99;
+}
+span.user-name {
+    font-size: 14px;
+    color: #fff;
+    padding-left: 20px;
+    line-height: 2;
+}
+.user {
+    display: flex;
+    align-items: center;
+    padding-top: 12px;
+}
+h1.heading.primary {
+    font-size: 31px;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 1);
+}
+.text-img-section{
+    width: 700px;
+}
+@media only screen and (max-width: 767px) {
+    #image-container {
+        height: 100%;
+        position: relative;
+        min-height: 240px;
+    }
+    h1.heading.primary {
+        font-size: 31px;
+        line-height: 1.2;
+        color: rgba(255, 255, 255, 1);
+    }
+    .display {
+        flex-direction: column;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    h1.heading.primary,.container h1 {
+        font-size: 24px;
+    }
+    .text-img-section{
+        width: 100%;
+    }
+    .container{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .card-container {
+        flex-direction: column;
+    }
+    .card {
+        width: auto;
+    }
+    .testimonial_wrapper {
+        flex: 0 0 100%;
+    }
 }

@@ -24,81 +24,100 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="footer-content" style={{border:"2px solid black",  paddingRight: "100px", paddingLeft: "100px", display: "flex"}}>
-        <div style={{ border: "2px solid red", width:"33.33%"}}>
-          <h3 style={{ color: "white", fontSize: "22px", lineHeight: "1.2", marginTop:"12", marginBottom:"11px"}}>İstanbul Branch</h3>
-          <p>Kılıçali Paşa, Meclis-i Mebusan Cd. No:29, 34425, Beyoğlu/İstanbul, Türkiye</p>
+      <div className="footer-content">
+        <div  className="footer-partition">
+          <div  className="footer-sub-partition">
+            <h3 style={{ color: "white", fontSize: "22px", lineHeight: "1.2", marginTop:"12", marginBottom:"11px"}}>İstanbul Branch</h3>
+            <p>Kılıçali Paşa, Meclis-i Mebusan Cd. No:29, 34425, Beyoğlu/İstanbul, Türkiye</p>
+          </div>
+          <div  className="footer-sub-partition">
+            <h3 style={{ color: "white", fontSize: "22px", lineHeight: "1.2", marginTop:"12", marginBottom:"11px"}}>Dubai Branch</h3>
+            <p>Latifa Tower – Trade Centre – Trade Centre 1 – Dubai – United Arab Emirates</p>
+          </div>
         </div>
-        <div style={{ border: "2px solid green"}}>
-          Content 2
+        <div  className="footer-partition">
+          <div  className="footer-sub-partition">
+            <p>Office Address: 2nd floor near bahadurgarh city metro station piller no 839 above Punjab national bank bahadurgarh -124507</p>
+          </div>
+          <div  className="footer-sub-partition">
+            <p>Mumbai Branch : Office no- 606, Plot no 13, Shah Prima, opp. Glomax Mall, Sector 2, Kharghar, Navi Mumbai, Maharashtra 410210, India</p>
+          </div>
         </div>
-        <div style={{ border: "2px solid blue"}}>
-          Content 3
+        <div  className="footer-partition">
+          <div  className="footer-sub-partition">
+            <p>Phone: 8571964292<br/>
+            Email: (For Admission or Exam related) <br/>
+            Admin@northindiamarineacademy.in<br/>
+            (For Job Related) career@northindiamarineacademy.in<br/>
+            info@northindiamarineacademy.in</p>
+          </div>
         </div>      
       </div>
-      <div className="footer-bottom" style={{ height:"70px", display: "flex", justifyContent: "space-between", paddingRight: "100px", paddingLeft: "100px", alignItems:"center", color:"rgba(166,176,179,1)", backgroundColor:"#102340" }}>
-        <div style={{marginBottom:"0px", marginTop:"0px", fontSize:"15px"}}>{data.footerNote}</div>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
-            style={{
-              position: "relative",
-              display: "inline-block",
-              overflow: "hidden",
-              textDecoration: "none"
-            }}
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <span className="social-icon">
-              <CiFacebook style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
-            </span>
-            <span className="social-circle"></span>
-          </a>
-          <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
-            style={{
-              position: "relative",
-              display: "inline-block",
-              overflow: "hidden",
-              textDecoration: "none"
-            }}
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <span className="social-icon">
-              <CiTwitter style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
-            </span>
-            <span className="social-circle"></span>
-          </a>
-          <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
-            style={{
-              position: "relative",
-              display: "inline-block",
-              overflow: "hidden",
-              textDecoration: "none"
-            }}
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <span className="social-icon">
-              <FaInstagram style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
-            </span>
-            <span className="social-circle"></span>
-          </a>
-          <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
-            style={{
-              position: "relative",
-              display: "inline-block",
-              overflow: "hidden",
-              textDecoration: "none"
-            }}
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-            <span className="social-icon">
-              <AiOutlineYoutube style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
-            </span>
-            <span className="social-circle"></span>
-          </a>
+      <div className="footer-bottom">
+        <div className="footer-bottom-inner">
+          <div style={{marginBottom:"0px", marginTop:"0px", fontSize:"15px"}}>{data.footerNote}</div>
+          <div className='footer-social'>
+            <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
+              style={{
+                position: "relative",
+                display: "inline-block",
+                overflow: "hidden",
+                textDecoration: "none"
+              }}
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span className="social-icon">
+                <CiFacebook style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
+              </span>
+              <span className="social-circle"></span>
+            </a>
+            <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
+              style={{
+                position: "relative",
+                display: "inline-block",
+                overflow: "hidden",
+                textDecoration: "none"
+              }}
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span className="social-icon">
+                <CiTwitter style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
+              </span>
+              <span className="social-circle"></span>
+            </a>
+            <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
+              style={{
+                position: "relative",
+                display: "inline-block",
+                overflow: "hidden",
+                textDecoration: "none"
+              }}
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span className="social-icon">
+                <FaInstagram style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
+              </span>
+              <span className="social-circle"></span>
+            </a>
+            <a className="fusion-social-network-icon fusion-tooltip fusion-facebook awb-icon-facebook"
+              style={{
+                position: "relative",
+                display: "inline-block",
+                overflow: "hidden",
+                textDecoration: "none"
+              }}
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+              <span className="social-icon">
+                <AiOutlineYoutube style={{ fontSize: "24px", color: "rgba(166,176,179,1)" }} />
+              </span>
+              <span className="social-circle"></span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>

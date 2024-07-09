@@ -1,11 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import "./Navbar.css"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import messageIcon from "./icon.png"
 import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
-
 
 
 const Navbar = () => {
@@ -23,21 +21,21 @@ const Navbar = () => {
 
   return (
     <div>
-      <div id="header" style={{ fontSize: "10px", lineHeight: "1.2", backgroundColor: "rgba(241,87,77,1)", paddingTop: "20px", paddingRight: "100px", paddingLeft: "100px" }}>
-        <div style={{ overflow: "hidden", paddingBottom: "25px" }}>
-          <h1 className="moving-text" style={{ textAlign: "center", whiteSpace: "nowrap" }}>{data.header}</h1>
+      <div id="header">
+        <div className="moving-text-wrapper">
+          <h1 className="moving-text">{data.header}</h1>
         </div>
-        <div style={{ textAlign: "left", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "7px" }}>
+        <div className='navbar-wrapper'>
+          <div className='info-container'>
             <p style={{ fontWeight: "400", fontSize: "13px" }}>{data.collaboration}</p>
             <p style={{ fontSize: "13px" }}>
               <span> <FaRegEnvelope /> </span>
               <a href={`mailto:${data.email}`} style={{ paddingLeft: "2px" }}>{data.email}</a></p>
           </div>
-          <div>
-            {/* <button>First</button>
-            <button>First</button>
-            <button>First</button> */}
+          <div className="button_container">
+            <button className="button_primary button_icon">Exam Hall Ticket</button>
+            <button className="button_primary button_icon">Appointment Letter</button>
+            <button className="button_primary button_icon">Selection Letter</button>
           </div>
         </div>
         {/* <div className="buttons">
@@ -46,9 +44,10 @@ const Navbar = () => {
         ))}
       </div> */}
       </div>
-      <nav id="navbar" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingRight: "100px", paddingLeft: "100px" }}>
-        <div>
+      <nav id="navbar">
+        <div className='logo-menu-wrapper'>
           <Image
+            className='logo-main'
             src={messageIcon}
             alt="go top"
             width={240}
@@ -56,24 +55,19 @@ const Navbar = () => {
           // onClick={() => goToBookingSection()}
           />
         </div>
-        <div>
+        <div className="fusion-custom-menu fusion-menu-element-list">
           {data.menu.map((item, index) => (
-            <a
-              key={index}
-              href="#"
-              style={{
-                fontWeight: 400,
-                fontSize: "14px",
-                textDecoration: "none",
-                padding: "5px",
-                border: "2px solid transparent",
-                transition: "border 0.3s ease"
-              }}
-              onMouseEnter={(e) => e.target.style.border = "2px solid #E94B3C"}
-              onMouseLeave={(e) => e.target.style.border = "1px solid transparent"}
-            >
-              {item}
-            </a>
+            <span className="fusion-menu-item">
+              <span className="transition-center-grow"></span>
+              <a
+                key={index}
+                href="#"
+              // onMouseEnter={(e) => e.target.style.border = "2px solid #E94B3C"}
+              // onMouseLeave={(e) => e.target.style.border = "1px solid transparent"}
+              >
+                {item}
+              </a>
+            </span>
           ))}
         </div>
 
