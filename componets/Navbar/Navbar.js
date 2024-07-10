@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import "./Navbar.css"
-import messageIcon from "./icon.png"
+import logo from "../../public/Navbar/icon.png"
 import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
 
@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className='logo-menu-wrapper'>
           <Image
             className='logo-main'
-            src={messageIcon}
+            src={logo}
             alt="go top"
             width={240}
             height={120}

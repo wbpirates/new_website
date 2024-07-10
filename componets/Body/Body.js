@@ -2,18 +2,19 @@
 import React, { useState, useEffect } from 'react'
 import "./Body.css"
 import Image from "next/image";
-import messageIcon from "./GSDM-400x400.png"
-import messageIcon1 from "./Images/2.jpg"
-import messageIcon2 from "./Images/3.jpg"
-import messageIcon3 from "./Images/4.jpg"
-import messageIcon4 from "./Images/5.jpg"
-import messageIcon5 from "./Images/6.jpg"
+import missionIcon from "../../public/GSDM-400x400.png"
+import sliderImage1 from "../../public/Slider/2.jpg"
+import sliderImage2 from "../../public/Slider/3.jpg"
+import sliderImage3 from "../../public/Slider/4.jpg"
+import sliderImage4 from "../../public/Slider/5.jpg"
+import sliderImage5 from "../../public/Slider/6.jpg"
+
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 
 const Body = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [images, setImages] = useState([messageIcon1, messageIcon2, messageIcon3, messageIcon4, messageIcon5]);
+    const [images, setImages] = useState([sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -72,7 +73,7 @@ const Body = () => {
                 {/* Image div */}
                 <div>
                     <Image
-                        src={messageIcon}
+                        src={missionIcon}
                         alt="go top"
                         width={300}
                         height={300}
