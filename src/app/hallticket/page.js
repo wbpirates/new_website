@@ -1,15 +1,14 @@
 import React from 'react'
 import Navbar from '../../../componets/Navbar/Navbar';
 import Footer from '../../../componets/Footer/Footer';
-import Form from '../../../componets/Form/Form';
+import dynamic from 'next/dynamic';
+const Form = dynamic(() => import('../../../componets/Form/Form'), { ssr: false });
 
 const page = () => {
     return (
         <div>
             <Navbar />
-                {/* <div style={{border: "2px solid black", height:"300px"}}> */}
-                    <Form />
-                {/* </div> */}
+                <Form />
             <Footer />
         </div>
       );

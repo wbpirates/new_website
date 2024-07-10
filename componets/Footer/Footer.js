@@ -64,7 +64,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="https://www.facebook.com/"
+              href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -79,7 +79,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="https://www.facebook.com/"
+              href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -94,7 +94,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="https://www.facebook.com/"
+              href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -109,7 +109,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="https://www.facebook.com/"
+              href="http://localhost:3000"
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -123,8 +123,6 @@ const Footer = () => {
     </footer>
   );
 };
-
-// rgba(61,76,104,1)
 
 export default Footer;
 
@@ -154,26 +152,4 @@ let data = {
   ],
   "footerNote": "© Copyright 2024 | NIMA | All Rights Reserved | Designed by Framemysite"
 }
-
-/**
- <div>
-          {data.branches.map((branch, index) => (
-            <div key={index} className="footer-section">
-              <h3 style={{lineHeight:"1.2"}}>{branch.title}</h3>
-              {branch.addressLines.map((line, idx) => (
-                <p key={idx}>{line}</p>
-              ))}
-            </div>
-          ))}
-        </div>
-        
-        
-        <div>
-          <div className="footer-section">
-            {data.contacts.map((contact, index) => (
-              <p key={index}>{contact}</p>
-            ))}
-         </div>
-        </div>
- */
 

@@ -54,7 +54,15 @@ const Body = () => {
                         left: 0,
                         zIndex: -1
                     }}
-                ></div>
+                >
+                    <div className='banner_content-wrapper'>
+                        <div className='banner_content'>
+                            <div className='banner-heading with-bg'>North India Marine Academy</div>
+                            <h3 className='banner-suheading'>A Marine Education Platform</h3>
+                            <a className='banner-link with-bg' href='#'>Contact Now</a>
+                        </div>
+                    </div>
+                </div>
                 <button
                     onClick={prevImage}
                     className="nav-button previous" // Add className for hover effect
@@ -135,20 +143,18 @@ const Body = () => {
                     </div>
                 </div>
             </div>
-            {/* Interface Friendly Learning At */}
             <div className='Interface display'>
                 <div  className="interface-inner">
-                    <h1 className='heading primary'>Interface Friendly Learning At</h1>
+                    <p className='heading primary' style={{ fontSize: "48px", lineHeight:"1.2", fontWeight:"700", color:"rgba(255,255,255,1)", padding:"10px" }}>Interface Friendly Learning At</p>
                     <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>NIMA- North India Marine Academy</div>
                     <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>NIMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.</div>
                     <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>North India Marine Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At North India Marine Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.</div>
                 </div>
             </div>
-            {/* Our Students Love Us */}
-            <div  className="testimonials-section-wrapper">
-                <div  className="testimonials-section">
-                    <div  className="headings-wrapper">
-                        <h1>Our Students Love Us</h1>
+            <div className="testimonials-section-wrapper">
+                <div className="testimonials-section">
+                    <div className="headings-wrapper">
+                        <p style={{fontSize:"48px", padding:"18px 18px", fontWeight:"700"}}>Our Students Love Us</p>
                         <p>Don’t Just Take Our Word For It, Read It From Them</p>
                     </div>
                     <div  className="testimonials">
@@ -207,50 +213,6 @@ const Body = () => {
                                 <span  className="user-name">Tara Chouhan</span>
                             </div>
                         </div>
-
-
-                        {/* <div  className="testimonial">
-                            <p>Today i got sponsorship for dns admission through north india marine academy rahul sir doing great work they provide good dg college with 100% placement thank u sir</p>
-                            <div  className="user">
-                                <img src="user3.png" alt="User" />
-                                    <div  className="user-name">Mohit Ruhil</div>
-                            </div>
-                        </div>
-                        <div  className="testimonial">
-                            <p>Best company ever 100% placement record & all course approved by DG shipping and special thank you Rahul sir</p>
-                            <div  className="user">
-                                <img src="user4.png" alt="User" />
-                                    <div  className="user-name">Lucky Gupta</div>
-                            </div>
-                        </div>
-                        <div  className="testimonial">
-                            <p>Today I proud my son sailing on ship as 3rd officer in australia.thank u merchantnavyhelpdesk &north india marine academy</p>
-                            <div  className="user">
-                                <img src="user5.png" alt="User" />
-                                    <div  className="user-name">Naveen Kumar</div>
-                            </div>
-                        </div>
-                        <div  className="testimonial">
-                            <p>Nice company for freshers I complete my first sail through north india marine academy thank u</p>
-                            <div  className="user">
-                                <img src="user6.png" alt="User" />
-                                    <div  className="user-name">Asha Ram Bairwa</div>
-                            </div>
-                        </div>
-                        <div  className="testimonial">
-                            <p>A good place for join merchantnavy they provide good ship after completed course now I’m in europe sailing as a tr wiper thank you merchant Navy help desk& North india marine academy</p>
-                            <div  className="user">
-                                <img src="user7.png" alt="User" />
-                                    <div  className="user-name">Vipin Yadav</div>
-                            </div>
-                        </div>
-                        <div  className="testimonial">
-                            <p>When you have a dream, you’ve got to grab it and never let go. So now it’s your turn to fulfill your dream to be a mariner with North Indian marine Academy. Best Placement service by Rahul sir.</p>
-                            <div  className="user">
-                                <img src="user8.png" alt="User" />
-                                    <div  className="user-name">Manisha Rao</div>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>
