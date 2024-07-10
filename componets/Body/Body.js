@@ -106,28 +106,28 @@ const Body = () => {
                 <p>One of the Best Marine Education Platform</p>
                 <div className="card-container">
                     <div className="card">
-                        <img src="7.png" alt="Support" style={{ width: "120px", height: "120px" }} />
+                        <img src="support.png" alt="Support" style={{ width: "120px", height: "120px" }} />
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
                         <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>SUPPORT</h3>
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
                         <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >Our support team work for complete preparation of courses by D.G shipping Govt. of India or RPSL with well versed & experienced mariners team.</p>
                     </div>
                     <div className="card">
-                        <img src="8.png" alt="Hassle Free Process" style={{ width: "120px", height: "120px" }} />
+                        <img src="rocket.png" alt="Hassle Free Process" style={{ width: "120px", height: "120px" }} />
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
                         <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>HASSLE FREE PROCESS</h3>
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
                         <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >NIMA ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.</p>
                     </div>
                     <div className="card">
-                        <img src="9.png" alt="Mission" style={{ width: "120px", height: "120px" }} />
+                        <img src="mission.png" alt="Mission" style={{ width: "120px", height: "120px" }} />
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
                         <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>MISSION</h3>
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
                         <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }}>Your Bright Future under maritime Industry with end-to-end solutions for MARITIME EDUCATION CONSULTANCY & SHIP MANAGEMENT is our core mission.</p>
                     </div>
                     <div className="card">
-                        <img src="9.png" alt="Vision" style={{ width: "120px", height: "120px" }} />
+                        <img src="vision.png" alt="Vision" style={{ width: "120px", height: "120px" }} />
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
                         <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>VISION</h3>
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
