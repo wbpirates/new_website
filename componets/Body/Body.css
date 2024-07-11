@@ -228,7 +228,7 @@ h1.heading.primary {
 .text-img-section{
     width: 700px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
     #image-container {
         height: 100%;
         position: relative;

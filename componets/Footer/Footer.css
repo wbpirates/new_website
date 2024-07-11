@@ -119,7 +119,7 @@ footer {
   display: flex;
   gap: 20px;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
   .footer-content {
       flex-direction: column;
   }

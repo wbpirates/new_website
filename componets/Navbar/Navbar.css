@@ -157,21 +157,23 @@ button.button_primary.button_icon a {
     cursor: pointer;
 }
 .sub-menu {
-    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     min-width: 200px;
+    visibility: hidden;
+    margin-top: 2px;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s 0.3s;
   }
   
-  .fusion-menu-item:hover .sub-menu {
-    display: block;
-  }  
+    .fusion-menu-item:hover .sub-menu {
+        visibility: visible;
+        opacity: 1;
+    }
 
   .sub-menu a {
     display: block;
@@ -181,7 +183,11 @@ button.button_primary.button_icon a {
     font-size: 14px;
     border-bottom: 1px solid #ddd;
   }
-  
+  .fusion-menu-item .sub-menu a {
+        padding: 12px 20px;
+        text-align: left;
+        transition: 0.5s;
+    }
   .sub-menu a:hover {
     background-color: #f1f1f1;
   }
@@ -222,7 +228,6 @@ button.button_primary.button_icon a {
 .fusion-menu-item:hover a {
     color: #ff5b57; /* Change this color as needed */
     border-radius: 5px;
-    padding: 5px 10px;
   }
 
 /* ============================================ */
@@ -340,7 +345,7 @@ a.banner-link.with-bg {
     text-align: center;
     letter-spacing: 2px;
 }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 1024px) {
     #header {
         padding-right: 20px;
         padding-left: 20px;
