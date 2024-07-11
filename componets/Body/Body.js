@@ -12,7 +12,7 @@ import sliderImage5 from "../../public/Slider/6.jpg"
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 
-const Body = () => {
+const Body = ({host}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [images, setImages] = useState([sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5]);
 

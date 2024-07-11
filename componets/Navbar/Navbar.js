@@ -6,7 +6,9 @@ import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
 import Link from 'next/link'
 import { IoIosArrowDown } from "react-icons/io";
-const Navbar = () => {
+
+
+const Navbar = ({host}) => {
   const goToBookingSection = () => {
     const bookingSection = document.getElementById('goToTop');
     if (bookingSection) {
@@ -32,7 +34,7 @@ const Navbar = () => {
               <div className="button_container">
                 {data.buttons.map((button) => (
                   <button key={button.id} className="button_primary button_icon">
-                    <Link href={button.link}>{button.text}</Link>
+                    <Link href={button.link === "" ? host : `${host}${button.link}`}>{button.text}</Link>
                   </button>
                 ))}
               </div>
@@ -56,7 +58,7 @@ const Navbar = () => {
           {data.menu.map((item) => (
             <span className="fusion-menu-item" key={item.id}>
               <span className="transition-center-grow"></span>
-              <Link href={item.link}>
+              <Link href={item.link === "" ? host : `${host}${item.link}`}>
                 {item.subOption?.length > 0 ? (
                   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
                     {item.text} <IoIosArrowDown />
@@ -68,7 +70,7 @@ const Navbar = () => {
               {item.subOption?.length > 0 && (
                 <div className="sub-menu">
                   {item.subOption.map((subItem) => (
-                    <Link key={subItem.id} href={subItem.link}>
+                    <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
                       {subItem.text}
                     </Link>
                   ))}
@@ -108,79 +110,79 @@ let data = {
     {
       "id": "1",
       "text": "EXAM HALL TICKET",
-      "link": "http://localhost:3000/hallticket"
+      "link": `/hallticket`
     },
     {
       "id": "2",
       "text": "APPOINTMENT LETTER",
-      "link": "http://localhost:3000/"
+      "link": ""
     },
     {
       "id": "3",
       "text": "SELECTION LETTER",
-      "link": "http://localhost:3000/"
+      "link": ""
     }
   ],
   "menu": [
     {
       "id": "1",
       "text": "HOME",
-      "link": "http://localhost:3000/",
+      "link": "",
       "subOption": []
     },
     {
       "id": "2",
       "text": "FLEET",
-      "link": "http://localhost:3000/",
+      "link": "",
       "subOption": []
     },
     {
       "id": "3",
       "text": "MERCHANT NAVY COURSES",
-      "link": "http://localhost:3000/",
+      "link": "",
       "subOption": [
         {
           "id": "1",
           "text": "STCW BASIC COURSE",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
         {
           "id": "2",
           "text": "TRAINEE MARINE ENGINEERS",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
         {
           "id": "3",
           "text": "GP RATING",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
         {
           "id": "4",
           "text": "DNS COURSE",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
         {
           "id": "5",
           "text": "BSC NAUTICAL SCIENCE",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
         {
           "id": "6",
           "text": "GRADUATE MECHANICAL ENGINEER",
-          "link": "http://localhost:3000/"
+          "link": ""
         },
       ]
     },
     {
       "id": "4",
       "text": "GALLERY",
-      "link": "http://localhost:3000/",
+      "link": "",
       "subOption": []
     },
     {
       "id": "5",
       "text": "CONTACT",
-      "link": "http://localhost:3000/",
+      "link": "",
       "subOption": []
     },
   ]

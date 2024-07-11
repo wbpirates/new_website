@@ -2,14 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import './Footer.css'; // Ensure your CSS file is properly linked
-import footerData from "../../public/Foooter.json"
 import { CiFacebook } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa6";
 import { AiOutlineYoutube } from "react-icons/ai";
 
-
-const Footer = () => {
+const Footer = ({host}) => {
   // const [data, setData] = useState(null);
 
   // useEffect(() => {
@@ -21,7 +19,6 @@ const Footer = () => {
   // if (!data) {
   //   return <div>Loading...</div>;
   // }
-
   return (
     <footer>
       <div className="footer-content">
@@ -64,7 +61,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="http://localhost:3000"
+              href={host}
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -79,7 +76,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="http://localhost:3000"
+              href={host}
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -94,7 +91,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="http://localhost:3000"
+              href={host}
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
@@ -109,7 +106,7 @@ const Footer = () => {
                 overflow: "hidden",
                 textDecoration: "none"
               }}
-              href="http://localhost:3000"
+              href={host}
               target="_blank"
               rel="noopener noreferrer">
               <span className="social-icon">
