@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import './footer.css'; // Ensure your CSS file is properly linked
+import './Footer.css'; // Ensure your CSS file is properly linked
 import footerData from "../../public/Foooter.json"
 import { CiFacebook } from "react-icons/ci";
 import { CiTwitter } from "react-icons/ci";

@@ -8,7 +8,7 @@ import html2pdf from "html2pdf.js"; // Make sure to include the library properly
 import { Toaster, toast } from "react-hot-toast";
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
-import "./form.css"; // Ensure your CSS file is properly linked
+import "./Form.css"; // Ensure your CSS file is properly linked
 
 const Form = () => {
   const [formData, setFormData] = useState({ rollNumber: "", phoneNumber: "" });
