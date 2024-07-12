@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import pdfFooterImage from "../../public/admitCard/footer-image.png"
 import pdfManImage from "../../public/admitCard/man.png"
 import pdfShipImage from "../../public/admitCard/ship.png"
-import html2canvas from 'html2canvas';
 import html2pdf from "html2pdf.js"; // Make sure to include the library properly
 import { Toaster, toast } from "react-hot-toast";
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import "./Form.css"; // Ensure your CSS file is properly linked
+import * as XLSX from 'xlsx';
 
 const Form = () => {
   const [formData, setFormData] = useState({ rollNumber: "", phoneNumber: "" });
@@ -25,32 +25,62 @@ const Form = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.rollNumber && !formData.phoneNumber) {
-      toast.error('Roll number or phone number is required');
-      return;
+        toast.error('Roll number or phone number is required');
+        return;
     }
+
     try {
-      const response = await fetch("/api/searchRollNumber", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ rollNumber: formData.rollNumber }),
-      });
+        // Fetch the Excel file from the public folder
+        const response = await fetch('/data.xlsx');
+        const arrayBuffer = await response.arrayBuffer();
 
-      const data = await response.json();
+        // Read the Excel file
+        const data = new Uint8Array(arrayBuffer);
+        const workbook = XLSX.read(data, { type: 'array' });
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const jsonData = XLSX.utils.sheet_to_json(sheet);
 
-      if (data.success) {
-        setResult(data.data);
-        toast.success("Record found!");
-      } else {
-        toast.error(data.message);
-      }
+        // Find entry by roll number or phone number
+        const found = jsonData.find(entry => entry['Roll No'] == formData.rollNumber) || jsonData.find(entry => entry['Phone Number'] == formData.phoneNumber);
+
+        if (found) {
+            // Convert the Excel serial date to a JavaScript Date object
+            const excelDateToJSDate = (serial) => {
+                const utc_days = Math.floor(serial - 25569);
+                const utc_value = utc_days * 86400;
+                const date_info = new Date(utc_value * 1000);
+                return new Date(date_info.getFullYear(), date_info.getMonth(), date_info.getDate());
+            };
+
+            // Convert the time from decimal to HH:MM AM/PM format
+            const decimalTimeToTimeString = (decimalTime) => {
+                const hours = Math.floor(decimalTime * 24);
+                const minutes = Math.round((decimalTime * 24 * 60) % 60);
+                const ampm = hours >= 12 ? 'PM' : 'AM';
+                const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                return `${formattedHours}:${formattedMinutes} ${ampm}`;
+            };
+
+            // Format the date and time fields
+            found['Examination Date'] = excelDateToJSDate(found['Examination Date']).toLocaleDateString('en-GB'); // DD-MM-YYYY format
+            found['Reporting Time'] = decimalTimeToTimeString(found['Reporting Time']);
+
+            setResult(found);
+            toast.success("Record found!");
+        } else {
+            toast.error('Roll number or phone number not found');
+        }
     } catch (error) {
-      toast.error("An error occurred while searching for the roll number");
+        toast.error("An error occurred while searching for the roll number");
     }
   };
+
 
   const handleView = () => {
     // Assuming 'result' contains the dynamic data
