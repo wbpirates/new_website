@@ -147,6 +147,6 @@ let data = {
     "(For Job Related) career@northindiamarineacademy.in",
     "info@northindiamarineacademy.in"
   ],
-  "footerNote": "© Copyright 2024 | NIMA | All Rights Reserved | Designed by Framemysite"
+  "footerNote": "© Copyright 2024 | MMA | All Rights Reserved | Designed by Framemysite"
 }
 

@@ -12,6 +12,91 @@ import sliderImage5 from "../../public/Slider/6.jpg"
 import { GrNext } from "react-icons/gr";
 import { GrPrevious } from "react-icons/gr";
 
+let data = {
+    banner: {
+        heading: 'Maritime Marvels Academy',
+        subheading: 'A Marine Education Platform',
+        linkText: 'Contact Now',
+        linkHref: '#'
+    },
+    images: [
+        sliderImage1,
+        sliderImage2,
+        sliderImage3,
+        sliderImage4,
+        sliderImage5
+    ],
+    approvals: {
+        icon: missionIcon,
+        heading: 'Approved By Gramin Skill Development Mission (GSDM)',
+        description: `We’re thrilled to announce that 
+            <em>
+                <strong>
+                    Maritime Marvels Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!
+                </strong>
+            </em>
+            This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!`
+    },
+    academyInfo: {
+        heading: 'MMA - Maritime Marvels Academy',
+        subheading: 'One of the Best Marine Education Platform',
+        cards: [
+            {
+                imgSrc: 'support.png',
+                imgAlt: 'Support',
+                title: 'SUPPORT',
+                description: 'Our support team work for complete preparation of courses by D.G shipping Govt. of India or RPSL with well versed & experienced mariners team.'
+            },
+            {
+                imgSrc: 'rocket.png',
+                imgAlt: 'Hassle Free Process',
+                title: 'HASSLE FREE PROCESS',
+                description: 'MMA ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.'
+            },
+            {
+                imgSrc: 'mission.png',
+                imgAlt: 'Mission',
+                title: 'MISSION',
+                description: 'Your Bright Future under maritime Industry with end-to-end solutions for MARITIME EDUCATION CONSULTANCY & SHIP MANAGEMENT is our core mission.'
+            },
+            {
+                imgSrc: 'vision.png',
+                imgAlt: 'Vision',
+                title: 'VISION',
+                description: 'To provide quality education and maritime consultancy to aspiring as well as existing marine Personnel.'
+            }
+        ]
+    },
+    interfaceLearning: {
+        heading: 'Interface Friendly Learning At',
+        subheading: 'MMA- Maritime Marvels Academy',
+        description1: 'MMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.',
+        description2: 'Maritime Marvels Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Maritime Marvels Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.'
+    },
+    testimonials: {
+        heading: 'Our Students Love Us',
+        subheading: 'Don’t Just Take Our Word For It, Read It From Them',
+        feedbacks: [
+            {
+                text: 'Good staff members I have worked with North Indian Marine Academy they doing very well',
+                name: 'Tara Chouhan',
+                imgSrc: 'user-image.svg'
+            },
+            {
+                text: 'Absolutely best company for adm. in dg approved colleges and 100% placement guarantee',
+                name: 'Tara Chouhan',
+                imgSrc: 'user-image.svg'
+            },
+            {
+                text: 'Today i got sponsorship for dns admission through Maritime Marvels Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir',
+                name: 'Tara Chouhan',
+                imgSrc: 'user-image.svg'
+            }
+        ]
+    }
+};
+
+
 const Body = ({host}) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [images, setImages] = useState([sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5]);
@@ -57,7 +142,7 @@ const Body = ({host}) => {
                 >
                     <div className='banner_content-wrapper'>
                         <div className='banner_content'>
-                            <div className='banner-heading with-bg'>North India Marine Academy</div>
+                            <div className='banner-heading with-bg'>{data.banner.heading}</div>
                             <h3 className='banner-suheading'>A Marine Education Platform</h3>
                             <a className='banner-link with-bg' href='#'>Contact Now</a>
                         </div>
@@ -100,7 +185,7 @@ const Body = ({host}) => {
                             We’re thrilled to announce that
                             <em>
                                 <strong>
-                                    North India Marine Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!
+                                    Maritime Marvels Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!
                                 </strong>
                             </em>
                             This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!
@@ -108,9 +193,9 @@ const Body = ({host}) => {
                     </div>
                 </div>
             </div>
-            {/* NIMA- North India Marine Academy */}
+            {/* MMA- Maritime Marvels Academy */}
             <div className="container">
-                <h1>NIMA - North India Marine Academy</h1>
+                <h1>MMA - Maritime Marvels Academy</h1>
                 <p>One of the Best Marine Education Platform</p>
                 <div className="card-container">
                     <div className="card">
@@ -125,7 +210,7 @@ const Body = ({host}) => {
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
                         <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>HASSLE FREE PROCESS</h3>
                         <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
-                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >NIMA ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.</p>
+                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >MMA ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.</p>
                     </div>
                     <div className="card">
                         <img src="mission.png" alt="Mission" style={{ width: "120px", height: "120px" }} />
@@ -146,9 +231,9 @@ const Body = ({host}) => {
             <div className='Interface display'>
                 <div  className="interface-inner">
                     <p className='heading primary' style={{ fontSize: "48px", lineHeight:"1.2", fontWeight:"700", color:"rgba(255,255,255,1)", padding:"10px" }}>Interface Friendly Learning At</p>
-                    <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>NIMA- North India Marine Academy</div>
-                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>NIMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.</div>
-                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>North India Marine Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At North India Marine Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.</div>
+                    <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>MMA- Maritime Marvels Academy</div>
+                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>MMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.</div>
+                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>Maritime Marvels Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Maritime Marvels Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.</div>
                 </div>
             </div>
             <div className="testimonials-section-wrapper">
@@ -178,7 +263,7 @@ const Body = ({host}) => {
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Today i got sponsorship for dns admission through north india marine academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
+                                Today i got sponsorship for dns admission through Maritime Marvels Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
@@ -206,7 +291,7 @@ const Body = ({host}) => {
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Today i got sponsorship for dns admission through north india marine academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
+                                Today i got sponsorship for dns admission through Maritime Marvels Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
@@ -220,4 +305,4 @@ const Body = ({host}) => {
     )
 }
 
-export default Body
+export default Body;
