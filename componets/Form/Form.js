@@ -16,7 +16,7 @@ const Form = () => {
   const data = {
     fields: [
       { label: "Roll Number", type: "text", name: "rollNumber" },
-      { label: "Phone Number", type: "text", name: "phoneNumber" },
+      // { label: "Phone Number", type: "text", name: "phoneNumber" },
     ],
     button: { text: "Search" },
   };
