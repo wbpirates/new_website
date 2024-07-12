@@ -5,7 +5,6 @@ import pdfManImage from "../../public/admitCard/man.png"
 import pdfShipImage from "../../public/admitCard/ship.png"
 import html2pdf from "html2pdf.js"; // Make sure to include the library properly
 import { Toaster, toast } from "react-hot-toast";
-import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
 import "./Form.css"; // Ensure your CSS file is properly linked
 import * as XLSX from 'xlsx';
