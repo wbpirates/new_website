@@ -105,7 +105,7 @@ export default Navbar;
 let data = {
   "header": "Approved By Gramin Skill Development Mission (GSDM)",
   "collaboration": "A Collaboration with Merchant Navy Help Desk",
-  "email": "info@northindiamarineacademy.in",
+  "email": "info@maritimemarvelsacademy.in",
   "buttons": [
     {
       "id": "1",

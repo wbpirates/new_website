@@ -78,7 +78,7 @@ let data = {
         subheading: 'Don’t Just Take Our Word For It, Read It From Them',
         feedbacks: [
             {
-                text: 'Good staff members I have worked with North Indian Marine Academy they doing very well',
+                text: 'Good staff members I have worked with Maritime Marvels Academy they doing very well',
                 name: 'Tara Chouhan',
                 imgSrc: 'user-image.svg'
             },
@@ -245,7 +245,7 @@ const Body = ({host}) => {
                     <div  className="testimonials">
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Good staff members I have worked with North Indian Marine Academy they doing very well 
+                                Good staff members I have worked with Maritime Marvels Academy they doing very well 
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
@@ -273,7 +273,7 @@ const Body = ({host}) => {
 
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Good staff members I have worked with North Indian Marine Academy they doing very well 
+                                Good staff members I have worked with Maritime Marvels Academy they doing very well 
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
