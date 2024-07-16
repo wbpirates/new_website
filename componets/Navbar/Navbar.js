@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import "./Navbar.css"
-import logo from "../../public/Navbar/icon.png"
+import logo from "../../public/Navbar/logo.png"
 import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
 import Link from 'next/link'
@@ -48,8 +48,8 @@ const Navbar = ({host}) => {
             className='logo-main'
             src={logo}
             alt="go top"
-            width={240}
-            height={120}
+            width={200}
+            height={150}
             onClick={() => window.location.reload()}
             style={{ cursor: 'pointer' }}
           />
