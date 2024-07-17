@@ -44,9 +44,9 @@ const Footer = ({host}) => {
           <div  className="footer-sub-partition">
             <p>Phone: 8571964292<br/>
             Email: (For Admission or Exam related) <br/>
-            Admin@maritimemarvelsacademy.in<br/>
-            (For Job Related) career@maritimemarvelsacademy.in<br/>
-            info@maritimemarvelsacademy.in</p>
+            Admin@maritimemarvalsacademy.in<br/>
+            (For Job Related) career@maritimemarvalsacademy.in<br/>
+            info@maritimemarvalsacademy.in</p>
           </div>
         </div>      
       </div>
@@ -143,9 +143,9 @@ let data = {
     "Office Address: 2nd floor near bahadurgarh city metro station piller no 839 above Punjab national bank bahadurgarh -124507",
     "Mumbai Branch: Office no- 606, Plot no 13, Shah Prima, opp. Glomax Mall, Sector 2, Kharghar, Navi Mumbai, Maharashtra 410210, India",
     "Phone: 8571964292",
-    "Email: (For Admission or Exam related) Admin@maritimemarvelsacademy.in",
-    "(For Job Related) career@maritimemarvelsacademy.in",
-    "info@maritimemarvelsacademy.in"
+    "Email: (For Admission or Exam related) Admin@maritimemarvalsacademy.in",
+    "(For Job Related) career@maritimenarvalsacademy.in",
+    "info@maritimemarvalsacademy.in"
   ],
   "footerNote": "© Copyright 2024 | MMA | All Rights Reserved | Designed by Framemysite"
 }
