@@ -14,7 +14,7 @@ import { GrPrevious } from "react-icons/gr";
 
 let data = {
     banner: {
-        heading: 'Maritime Marvals Academy',
+        heading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
         subheading: 'A Marine Education Platform',
         linkText: 'Contact Now',
         linkHref: '#'
@@ -38,7 +38,7 @@ let data = {
             This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!`
     },
     academyInfo: {
-        heading: 'MMA - Maritime Marvals Academy',
+        heading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
         subheading: 'One of the Best Marine Education Platform',
         cards: [
             {
@@ -69,7 +69,7 @@ let data = {
     },
     interfaceLearning: {
         heading: 'Interface Friendly Learning At',
-        subheading: 'MMA- Maritime Marvals Academy',
+        subheading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
         description1: 'MMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.',
         description2: 'Maritime Marvals Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Maritime Marvals Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.'
     },
@@ -142,7 +142,7 @@ const Body = ({host}) => {
                 >
                     <div className='banner_content-wrapper'>
                         <div className='banner_content'>
-                            <div className='banner-heading with-bg'>{data.banner.heading}</div>
+                            <div className='banner-heading with-bg' style={{ fontSize: '44px' }}>{data.banner.heading}</div>
                             <h3 className='banner-suheading'>{data.banner.subheading}</h3>
                             <a className='banner-link with-bg' href='#'>{data.banner.linkText}</a>
                         </div>
@@ -193,9 +193,8 @@ const Body = ({host}) => {
                     </div>
                 </div>
             </div>
-            {/* MMA- Maritime Marvals Academy */}
             <div className="container">
-                <h1>MMA - Maritime Marvals Academy</h1>
+                <h1>MSY MARINE ACADEMY & MANAGEMENT SERVICES</h1>
                 <p>One of the Best Marine Education Platform</p>
                 <div className="card-container">
                     <div className="card">
@@ -231,7 +230,7 @@ const Body = ({host}) => {
             <div className='Interface display'>
                 <div  className="interface-inner">
                     <p className='heading primary' style={{ fontSize: "48px", lineHeight:"1.2", fontWeight:"700", color:"rgba(255,255,255,1)", padding:"10px" }}>Interface Friendly Learning At</p>
-                    <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>MMA- Maritime Marvals Academy</div>
+                    <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>MSY MARINE ACADEMY & MANAGEMENT SERVICES</div>
                     <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>MMA is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.</div>
                     <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>Maritime Marvals Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Maritime Marvals Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.</div>
                 </div>

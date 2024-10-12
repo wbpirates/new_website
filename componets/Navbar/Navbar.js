@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { IoIosArrowDown } from "react-icons/io";
 
 
-const Navbar = ({host}) => {
+const Navbar = ({ host }) => {
   const goToBookingSection = () => {
     const bookingSection = document.getElementById('goToTop');
     if (bookingSection) {
@@ -43,7 +43,7 @@ const Navbar = ({host}) => {
         </div>
       </div>
       <nav id="navbar">
-        <div className='logo-menu-wrapper'>
+        {/* <div className='logo-menu-wrapper'>
           <Image
             className='logo-main'
             src={logo}
@@ -53,12 +53,22 @@ const Navbar = ({host}) => {
             onClick={() => window.location.reload()}
             style={{ cursor: 'pointer' }}
           />
-        </div>
+        </div> */}
+        <a href={host}>
+          <Image
+            className='logo-main'
+            src={logo}
+            alt="go top"
+            width={200}
+            height={150}
+            style={{ cursor: 'pointer' }}
+          />
+        </a>
         <div className="fusion-custom-menu fusion-menu-element-list">
           {data.menu.map((item) => (
             <span className="fusion-menu-item" key={item.id}>
               <span className="transition-center-grow"></span>
-              <Link href={item.link === "" ? host : `${host}${item.link}`}>
+              <Link href={item.link == "" ? host : `${host}${item.link}`}>
                 {item.subOption?.length > 0 ? (
                   <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
                     {item.text} <IoIosArrowDown />
@@ -105,7 +115,7 @@ export default Navbar;
 let data = {
   "header": "Approved By Gramin Skill Development Mission (GSDM)",
   "collaboration": "A Collaboration with Merchant Navy Help Desk",
-  "email": "info@maritimemarvalsacademy.in",
+  "email": "msymarineacademy@gmailcom",
   "buttons": [
     {
       "id": "1",

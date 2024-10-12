@@ -46,7 +46,7 @@ const Footer = ({host}) => {
             Email: (For Admission or Exam related) <br/>
             Admin@maritimemarvalsacademy.in<br/>
             (For Job Related) career@maritimemarvalsacademy.in<br/>
-            info@maritimemarvalsacademy.in</p>
+            msymarineacademy@gmailcom</p>
           </div>
         </div>      
       </div>
@@ -145,7 +145,7 @@ let data = {
     "Phone: 8571964292",
     "Email: (For Admission or Exam related) Admin@maritimemarvalsacademy.in",
     "(For Job Related) career@maritimenarvalsacademy.in",
-    "info@maritimemarvalsacademy.in"
+    "msymarineacademy@gmailcom"
   ],
   "footerNote": "© Copyright 2024 | MMA | All Rights Reserved | Designed by Framemysite"
 }
