@@ -16,7 +16,7 @@ const Form = () => {
   const data = {
     fields: [
       { label: "Roll Number", type: "text", name: "rollNumber" },
-      // { label: "Phone Number", type: "text", name: "phoneNumber" },
+      // { label: "Phone Number", type: "tel", name: "phoneNumber" },
     ],
     button: { text: "Search" },
   };
@@ -45,7 +45,7 @@ const Form = () => {
       const jsonData = XLSX.utils.sheet_to_json(sheet);
 
       // Find entry by roll number or phone number
-      const found = jsonData.find(entry => entry['Roll No'] == formData.rollNumber) || jsonData.find(entry => entry['Phone Number'] == formData.phoneNumber);
+      const found = jsonData.find(entry => entry['Roll No'] == formData.rollNumber) && jsonData.find(entry => entry['Phone Number'] == formData.phoneNumber);
 
       if (found) {
         // Convert the Excel serial date to a JavaScript Date object
@@ -73,18 +73,15 @@ const Form = () => {
         setResult(found);
         toast.success("Record found!");
       } else {
-        toast.error('Roll number or phone number not found');
+        toast.error('No record present');
       }
     } catch (error) {
       toast.error("An error occurred while searching for the roll number");
     }
   };
 
-
   const handleView = () => {
-    // Assuming 'result' contains the dynamic data
     if (result) {
-      // Replace placeholders with actual data
       let htmlContent = `
         <html>
         <head>
@@ -365,7 +362,10 @@ const Form = () => {
 
   return (
     <div className="form-wrapper">
-      <form onSubmit={handleSubmit} className="form-container">
+      <form onSubmit={(e) => {
+        handleSubmit(e);
+        setResult(null); // Reset result when form is submitted again
+      }} className="form-container">
         {data.fields.map((field, index) => (
           <div key={index} className="form-group">
             <label>{field.label}</label>
@@ -374,22 +374,37 @@ const Form = () => {
               name={field.name}
               value={formData[field.name]}
               onChange={handleChange}
+              required
             />
           </div>
         ))}
+
+        {/* Phone number field */}
+        <div className="form-group">
+          <label>Phone Number</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            pattern="[0-9]{10}"
+            title="Phone number must be 10 digits"
+            required
+          />
+        </div>
+
         <button type="submit" className="form-button">
           {data.button.text}
         </button>
+
+        {/* Conditionally render View and Download buttons if result is available */}
         {result && (
           <div className="result">
             <div className="button-container">
               <button className="form-button-data-found" onClick={handleView}>
                 View
               </button>
-              <button
-                className="form-button-data-found"
-                onClick={handleDownload}
-              >
+              <button className="form-button-data-found" onClick={handleDownload}>
                 Download
               </button>
             </div>
