@@ -34,7 +34,7 @@ const Footer = ({host}) => {
         </div>
         <div  className="footer-partition">
           <div  className="footer-sub-partition">
-            <p>Office Address: 2nd floor near bahadurgarh city metro station piller no 839 above Punjab national bank bahadurgarh -124507</p>
+            <p>Office Address: 199/1 Ashutosh Nagar, Krishna Nagar, Lucknow Manasnagar 226023</p>
           </div>
           <div  className="footer-sub-partition">
             <p>Mumbai Branch : Office no- 606, Plot no 13, Shah Prima, opp. Glomax Mall, Sector 2, Kharghar, Navi Mumbai, Maharashtra 410210, India</p>
@@ -42,11 +42,12 @@ const Footer = ({host}) => {
         </div>
         <div  className="footer-partition">
           <div  className="footer-sub-partition">
-            <p>Phone: 8571964292<br/>
+            <p>Phone: 8887390176<br/>
             Email: (For Admission or Exam related) <br/>
-            Admin@maritimemarvalsacademy.in<br/>
-            (For Job Related) career@maritimemarvalsacademy.in<br/>
-            msymarineacademy@gmailcom</p>
+            msymarineacademy@gmail.com<br/>
+            {/* (For Job Related) career@maritimemarvalsacademy.in<br/>
+            msymarineacademy@gmailcom */}
+            </p>
           </div>
         </div>      
       </div>
@@ -140,13 +141,13 @@ let data = {
     }
   ],
   "contacts": [
-    "Office Address: 2nd floor near bahadurgarh city metro station piller no 839 above Punjab national bank bahadurgarh -124507",
+    "Office Address: 199/1 Ashutosh Nagar, Krishna Nagar, Lucknow Manasnagar 226023",
     "Mumbai Branch: Office no- 606, Plot no 13, Shah Prima, opp. Glomax Mall, Sector 2, Kharghar, Navi Mumbai, Maharashtra 410210, India",
-    "Phone: 8571964292",
+    "Phone: 8887390176",
     "Email: (For Admission or Exam related) Admin@maritimemarvalsacademy.in",
     "(For Job Related) career@maritimenarvalsacademy.in",
-    "msymarineacademy@gmailcom"
+    "msymarineacademy@gmail.com"
   ],
-  "footerNote": "© Copyright 2024 | MMA | All Rights Reserved | Designed by Framemysite"
+  "footerNote": "© Copyright 2024 | MSY | All Rights Reserved | Designed by Framemysite"
 }
 

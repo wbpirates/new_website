@@ -1,5 +1,7 @@
 footer {
-  background-color: #00246891;
+  /* background-color: #00246891; */
+  background-color:rgb(189, 99, 54);
+
   color: white;
 }
 .footer-bottom-inner{
