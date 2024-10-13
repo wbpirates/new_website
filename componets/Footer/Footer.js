@@ -42,7 +42,7 @@ const Footer = ({host}) => {
         </div>
         <div  className="footer-partition">
           <div  className="footer-sub-partition">
-            <p>Phone: 8887390176<br/>
+            <p>Phone: +91 9598127768 | +91 9628194239<br/>
             Email: (For Admission or Exam related) <br/>
             msymarineacademy@gmail.com<br/>
             {/* (For Job Related) career@maritimemarvalsacademy.in<br/>
@@ -143,7 +143,7 @@ let data = {
   "contacts": [
     "Office Address: 199/1 Ashutosh Nagar, Krishna Nagar, Lucknow Manasnagar 226023",
     "Mumbai Branch: Office no- 606, Plot no 13, Shah Prima, opp. Glomax Mall, Sector 2, Kharghar, Navi Mumbai, Maharashtra 410210, India",
-    "Phone: 8887390176",
+    "Phone: +91 9598127768 | +91 9628194239",
     "Email: (For Admission or Exam related) Admin@maritimemarvalsacademy.in",
     "(For Job Related) career@maritimenarvalsacademy.in",
     "msymarineacademy@gmail.com"
