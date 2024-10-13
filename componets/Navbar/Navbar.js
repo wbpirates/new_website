@@ -58,7 +58,7 @@ const Navbar = ({ host }) => {
         </div>
       </div>
 
-      <nav id="navbar">
+      {/* <nav id="navbar">
         <div>
           <a href={host}>
             <Image
@@ -71,16 +71,11 @@ const Navbar = ({ host }) => {
             />
           </a>
         </div>
-        {/* Mobile Menu */}
         <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
       {isMobile ? (
         <div className="mobile-menu">
           <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? (
-              <FaTimes style={{ fontSize: '30px', cursor: 'pointer' }} /> // Show close icon when menu is open
-            ) : (
-              <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} /> // Show hamburger icon when menu is closed
-            )}
+            <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} />
           </div>
           {menuOpen && (
             <div className="mobileMenuContent">
@@ -131,7 +126,90 @@ const Navbar = ({ host }) => {
         </div>
       )}
     </div>
+      </nav> */}
+
+      <nav id="navbar">
+        <div>
+          <a href={host}>
+            <Image
+              className='logo-main'
+              src={logo}
+              alt="go top"
+              width={300}
+              height={200}
+              style={{ cursor: 'pointer' }}
+            />
+          </a>
+        </div>
+
+        {/* Mobile Menu */}
+        <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+          {isMobile ? (
+            <div className="mobile-menu">
+              <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} />
+              </div>
+              {menuOpen && (
+                <div className="mobileMenuContent">
+                  <div className="menu-close" onClick={() => setMenuOpen(false)} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    height: '100px',
+                    paddingRight: '20px',
+                  }}>
+                    <FaTimes style={{ fontSize: '30px', cursor: 'pointer', marginBottom: '10px' }} />
+                  </div>
+
+                  {data?.menu?.map((item) => (
+                    <span className="fusion-menu-item" key={item.id}>
+                      <Link href={item.link === "" ? host : `${host}${item.link}`}>
+                        {item.text}
+                      </Link>
+                      {item.subOption?.length > 0 && (
+                        <div className="sub-menu">
+                          {item.subOption.map((subItem) => (
+                            <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
+                              {subItem.text}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="fusion-custom-menu fusion-menu-element-list">
+              {data?.menu?.map((item) => (
+                <span className="fusion-menu-item" key={item.id}>
+                  <span className="transition-center-grow"></span>
+                  <Link href={item.link === "" ? host : `${host}${item.link}`}>
+                    {item.subOption?.length > 0 ? (
+                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+                        {item.text} <IoIosArrowDown />
+                      </div>
+                    ) : (
+                      item.text
+                    )}
+                  </Link>
+                  {item.subOption?.length > 0 && (
+                    <div className="sub-menu">
+                      {item.subOption.map((subItem) => (
+                        <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
+                          {subItem.text}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
       </nav>
+
 
       <section
         className="to-top-container to-top-right"
