@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
 import Link from 'next/link';
 import { IoIosArrowDown } from "react-icons/io";
-import { FaBars } from "react-icons/fa"; // Hamburger icon for mobile
+import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger icon for mobile
 
 const Navbar = ({ host }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -73,45 +73,21 @@ const Navbar = ({ host }) => {
         </div>
         {/* Mobile Menu */}
         <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
-          {isMobile ? (
-            <div className="mobile-menu">
-              <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} />
-              </div>
-              {menuOpen && (
-                <div className="mobileMenuContent">
-                  {data?.menu?.map((item) => (
-                    <span className="fusion-menu-item" key={item.id}>
-                      <Link href={item.link === "" ? host : `${host}${item.link}`}>
-                        {item.text}
-                      </Link>
-                      {item.subOption?.length > 0 && (
-                        <div className="sub-menu">
-                          {item.subOption.map((subItem) => (
-                            <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
-                              {subItem.text}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="fusion-custom-menu fusion-menu-element-list">
+      {isMobile ? (
+        <div className="mobile-menu">
+          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? (
+              <FaTimes style={{ fontSize: '30px', cursor: 'pointer' }} /> // Show close icon when menu is open
+            ) : (
+              <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} /> // Show hamburger icon when menu is closed
+            )}
+          </div>
+          {menuOpen && (
+            <div className="mobileMenuContent">
               {data?.menu?.map((item) => (
                 <span className="fusion-menu-item" key={item.id}>
-                  <span className="transition-center-grow"></span>
                   <Link href={item.link === "" ? host : `${host}${item.link}`}>
-                    {item.subOption?.length > 0 ? (
-                      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-                        {item.text} <IoIosArrowDown />
-                      </div>
-                    ) : (
-                      item.text
-                    )}
+                    {item.text}
                   </Link>
                   {item.subOption?.length > 0 && (
                     <div className="sub-menu">
@@ -126,8 +102,35 @@ const Navbar = ({ host }) => {
               ))}
             </div>
           )}
-
         </div>
+      ) : (
+        <div className="fusion-custom-menu fusion-menu-element-list">
+          {data?.menu?.map((item) => (
+            <span className="fusion-menu-item" key={item.id}>
+              <span className="transition-center-grow"></span>
+              <Link href={item.link === "" ? host : `${host}${item.link}`}>
+                {item.subOption?.length > 0 ? (
+                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
+                    {item.text} <IoIosArrowDown />
+                  </div>
+                ) : (
+                  item.text
+                )}
+              </Link>
+              {item.subOption?.length > 0 && (
+                <div className="sub-menu">
+                  {item.subOption.map((subItem) => (
+                    <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
+                      {subItem.text}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
       </nav>
 
       <section
