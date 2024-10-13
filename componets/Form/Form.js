@@ -171,7 +171,8 @@ const Form = () => {
                 </div>
                 <div class="form-title">
                   <h1>SEA FARES ENTRANCE ELIGIBILITY TEST (2024-25)</h1>
-                  <h4>APPROVED BY MINISTERIAL CORPORATION</h4>
+                  <h4>APPROVED BY MINISTERIAL CORPORATION OF ADMINISTRATION</h4>
+                  <h5>[EXAMINATIONN HALL TICKET]</h5>
                 </div>
                 <div class="img-right">
                   <img src=${pdfManImage?.src}>
@@ -284,7 +285,8 @@ const Form = () => {
             <div class="img-left"><img src=${pdfShipImage?.src} width="80"></div>
              <div class="form-title">
               <h3>SEA FARES ENTRANCE ELIGIBILITY TEST (2024-25)</h1>
-              <h5>APPROVED BY MINISTERIAL CORPORATION</h4>
+              <h4>APPROVED BY MINISTERIAL CORPORATION OF ADMINISTRATION</h4>
+              <h6>[EXAMINATIONN HALL TICKET]</h6>
             </div>
             <div class="img-right"><img src=${pdfManImage?.src} width="80"></div>
           </div>              

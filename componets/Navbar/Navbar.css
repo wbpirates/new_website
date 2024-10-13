@@ -7,6 +7,33 @@ body {
 .header-wrapper{
     background-color: #fff;
 }
+
+.logo-container {
+    position: relative; 
+    background-image: url('../../public/Slider/99.jpg'); /* Replace with your background image path */
+    background-size: cover; /* Makes sure the background image covers the entire area */
+    background-position: center; /* Center the background image */
+    padding: 20px; /* Add some padding around the logo */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    display: inline-block; /* Ensure it wraps around the logo */
+}
+
+.bg-overlay {
+    position: absolute; /* Position overlay absolutely */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: rgba(0, 0, 0, 0.5); /* Change this color and opacity as needed */
+    border-radius: 10px; /* Match the logo container's border radius */
+    z-index: 1; /* Ensure it's on top of the background image */
+}
+
+.logo-main {
+    position: relative; /* Position logo above the overlay */
+    z-index: 2; /* Ensure the logo is on top of the overlay */
+}
+
 #header {
     color: white;
     text-align: center;
@@ -15,7 +42,7 @@ body {
     font-size: 10px;
     line-height: 1.2;
     /* background-color: rgb(83, 118, 134); */
-    background-color:rgb(189, 99, 54);
+    background-color:rgb(12,42,70);
     padding-top: 20px;
     padding-right: 100px;
     padding-left: 100px;
@@ -52,22 +79,22 @@ body {
 
 #navbar {
     background-color: white;
+    /* background-image: url('../../public/Slider/99.jpg'); */
     /* padding: 10px 0; */
     padding-right: 30px;
     padding-left: 30px;
     text-align: center;
     border-top: 1px solid #ddd;
-
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
     padding-right: 100px;
     padding-left: 100px;
-    max-width: 1260px;
+    max-width: 1320px;
     margin: 0 auto;
 }
 .navbar-container{
-    max-width: 1260px;
+    max-width: 1320px;
     margin: 0 auto;
     padding-bottom: 25px;
 }
@@ -75,7 +102,6 @@ body {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-
     font-weight: 400;
     font-size: 14px;
     transition: border 0.3s ease;
@@ -93,12 +119,12 @@ body {
     line-height: 14px;
     font-size: 12px;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    box-shadow: inset 0 1px 0 #fff, 0 0.15em 0 rgb(189, 99, 54), 0.1em 0.2em 0.2em 0.15em rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 0 #fff, 0 0.15em 0 rgb(12,42,70), 0.1em 0.2em 0.2em 0.15em rgba(0, 0, 0, 0.3);
     border-color: #ffffff;
     color: #ffffff;
     border-radius: 10px 10px 10px 10px;
     /* background: rgb(83, 118, 134); */
-    background-color:rgb(189, 99, 54);
+    background-color:rgb(12,42,70);
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -346,8 +372,8 @@ h3.banner-suheading {
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
 }
 a.banner-link.with-bg {
-    /* background: rgb(189, 99, 54); */
-    background-color:rgb(189, 99, 54);
+    /* background: rgb(12,42,70); */
+    background-color:rgb(12,42,70);
     padding: 17px 40px;
     margin-top: 40px;
     display: block;
