@@ -84,12 +84,12 @@ let data = {
             },
             {
                 text: 'Absolutely best company for adm. in dg approved colleges and 100% placement guarantee',
-                name: 'Tara Chouhan',
+                name: 'Saurabh Pande',
                 imgSrc: 'user-image.svg'
             },
             {
                 text: 'Today i got sponsorship for dns admission through Marine Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir',
-                name: 'Tara Chouhan',
+                name: 'Shubham Sharma',
                 imgSrc: 'user-image.svg'
             }
         ]
@@ -242,59 +242,58 @@ const Body = ({host}) => {
                         <p>Don’t Just Take Our Word For It, Read It From Them</p>
                     </div>
                     <div  className="testimonials">
-                        <div  className="testimonial_wrapper">
+                        <div className="testimonial_wrapper">
+                            <div className="testimonial">
+                                The team is extremely professional, and the service exceeded my expectations. I highly recommend them for anyone looking for quality and reliability.                                
+                            </div>
+                            <div className="user">
+                                <img src="user-image.svg" alt="User" />
+                                <span className="user-name">Narayan Rangari</span>
+                            </div>
+                        </div>
+                        <div className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Good staff members I have worked with Marine Academy they doing very well 
+                                Great experience! The process was smooth and well-managed. They truly deliver on their promises.
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
+                                <span  className="user-name">Shivani Dable</span>
                             </div>
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Absolutely best company for adm. in dg approved colleges and 100% placement guarantee    
+                                I was impressed with their level of expertise and attention to detail. The staff made the entire process easy and stress-free.
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
+                                <span  className="user-name">Mayur Kushwaha</span>
                             </div>
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Today i got sponsorship for dns admission through Marine Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
+                                Excellent service! They provided clear guidance and support throughout, ensuring a seamless experience.
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
-                            </div>
-                        </div>
-
-                        <div  className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                Good staff members I have worked with Marine Academy they doing very well 
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
+                                <span  className="user-name">Ashna dube</span>
                             </div>
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Absolutely best company for adm. in dg approved colleges and 100% placement guarantee    
+                                Top-notch company with exceptional customer service. The staff is knowledgeable, and their dedication is evident in every interaction.
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
+                                <span className="user-name">Danish Khan</span>
                             </div>
                         </div>
                         <div  className="testimonial_wrapper">
                             <div  className="testimonial">
-                                Today i got sponsorship for dns admission through Marine Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir
+                                Highly satisfied with the service! They offer comprehensive support and deliver results as promised.
                             </div>
                             <div  className="user">
                                 <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Tara Chouhan</span>
+                                <span className="user-name">Priyanshu Kumar</span>
                             </div>
                         </div>
                     </div>

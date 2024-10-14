@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import pdfFooterImage from "../../public/admitCard/footer-image.png"
 import pdfManImage from "../../public/admitCard/man.png"
 import pdfShipImage from "../../public/admitCard/ship.png"
@@ -12,6 +12,15 @@ import * as XLSX from 'xlsx';
 const Form = () => {
   const [formData, setFormData] = useState({ rollNumber: "", phoneNumber: "" });
   const [result, setResult] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isValid, setIsValid] = useState(false);
+
+  // Validate form fields for both phoneNumber and rollNumber
+  useEffect(() => {
+    const isPhoneNumberValid = /^[0-9]{10}$/.test(formData.phoneNumber);
+    const isRollNumberValid = formData.rollNumber.trim() !== '';
+    setIsValid(isPhoneNumberValid && isRollNumberValid);
+  }, [formData]); 
 
   const data = {
     fields: [
@@ -23,61 +32,6 @@ const Form = () => {
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!formData.rollNumber && !formData.phoneNumber) {
-      toast.error('Roll number or phone number is required');
-      return;
-    }
-
-    try {
-      // Fetch the Excel file from the public folder
-      const response = await fetch('/data.xlsx');
-      const arrayBuffer = await response.arrayBuffer();
-
-      // Read the Excel file
-      const data = new Uint8Array(arrayBuffer);
-      const workbook = XLSX.read(data, { type: 'array' });
-      const sheetName = workbook.SheetNames[0];
-      const sheet = workbook.Sheets[sheetName];
-      const jsonData = XLSX.utils.sheet_to_json(sheet);
-
-      // Find entry by roll number or phone number
-      const found = jsonData.find(entry => entry['Roll No'] == formData.rollNumber) && jsonData.find(entry => entry['Phone Number'] == formData.phoneNumber);
-
-      if (found) {
-        // Convert the Excel serial date to a JavaScript Date object
-        const excelDateToJSDate = (serial) => {
-          const utc_days = Math.floor(serial - 25569);
-          const utc_value = utc_days * 86400;
-          const date_info = new Date(utc_value * 1000);
-          return new Date(date_info.getFullYear(), date_info.getMonth(), date_info.getDate());
-        };
-
-        // Convert the time from decimal to HH:MM AM/PM format
-        const decimalTimeToTimeString = (decimalTime) => {
-          const hours = Math.floor(decimalTime * 24);
-          const minutes = Math.round((decimalTime * 24 * 60) % 60);
-          const ampm = hours >= 12 ? 'PM' : 'AM';
-          const formattedHours = hours % 12 || 12; // Convert to 12-hour format
-          const formattedMinutes = minutes.toString().padStart(2, '0');
-          return `${formattedHours}:${formattedMinutes} ${ampm}`;
-        };
-
-        // Format the date and time fields
-        found['Examination Date'] = excelDateToJSDate(found['Examination Date']).toLocaleDateString('en-GB'); // DD-MM-YYYY format
-        found['Reporting Time'] = decimalTimeToTimeString(found['Reporting Time']);
-
-        setResult(found);
-        toast.success("Record found!");
-      } else {
-        toast.error('No record present');
-      }
-    } catch (error) {
-      toast.error("An error occurred while searching for the roll number");
-    }
   };
 
   const handleView = () => {
@@ -360,20 +314,92 @@ const Form = () => {
     }
   };
 
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setResult(null);
+    // Validate that either roll number or phone number is provided
+    if (!formData.rollNumber || !formData.phoneNumber) {
+      toast.error('Both Roll Number and Phone Number are required.');
+      return;
+    }
+  
+    // Show loader while processing
+    setIsSubmitting(true);
+  
+    try {
+      // Simulate network delay for 1 second to give user feedback
+      await new Promise(resolve => setTimeout(resolve, 1000));
+  
+      // Fetch the Excel file from the public folder
+      const response = await fetch('/data.xlsx');
+      if (!response.ok) {
+        throw new Error('Failed to fetch Excel file');
+      }
+  
+      const arrayBuffer = await response.arrayBuffer();
+  
+      // Read the Excel file
+      const data = new Uint8Array(arrayBuffer);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const sheetName = workbook.SheetNames[0];
+      const sheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(sheet);
+  
+      // Find entry by both roll number and phone number
+      const found = jsonData.find(
+        entry =>
+          entry['Roll No'] == formData.rollNumber &&
+          entry['Phone Number'] == formData.phoneNumber
+      );
+  
+      if (found) {
+        // Convert the Excel serial date to a JavaScript Date object
+        const excelDateToJSDate = (serial) => {
+          const utc_days = Math.floor(serial - 25569);
+          const utc_value = utc_days * 86400;
+          const date_info = new Date(utc_value * 1000);
+          return new Date(date_info.getFullYear(), date_info.getMonth(), date_info.getDate());
+        };
+  
+        // Convert the time from decimal to HH:MM AM/PM format
+        const decimalTimeToTimeString = (decimalTime) => {
+          const hours = Math.floor(decimalTime * 24);
+          const minutes = Math.round((decimalTime * 24 * 60) % 60);
+          const ampm = hours >= 12 ? 'PM' : 'AM';
+          const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+          const formattedMinutes = minutes.toString().padStart(2, '0');
+          return `${formattedHours}:${formattedMinutes} ${ampm}`;
+        };
+  
+        // Format the date and time fields
+        found['Examination Date'] = excelDateToJSDate(found['Examination Date']).toLocaleDateString('en-GB'); // DD-MM-YYYY format
+        found['Reporting Time'] = decimalTimeToTimeString(found['Reporting Time']);
+        console.log(`Found`, found);
+        setResult(found);
+        toast.success("Record found!");
+      } else {
+        toast.error('No record found for the provided Roll Number and Phone Number.');
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("An error occurred while searching for the record.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };  
+
   return (
     <div className="form-wrapper">
-      <form onSubmit={(e) => {
-        handleSubmit(e);
-        setResult(null); // Reset result when form is submitted again
-      }} className="form-container">
-        {data.fields.map((field, index) => (
+      <form onSubmit={handleFormSubmit} className="form-container">
+        {data?.fields?.map((field, index) => (
           <div key={index} className="form-group">
-            <label>{field.label}</label>
+            <label className="form-label">{field.label}</label>
             <input
               type={field.type}
               name={field.name}
               value={formData[field.name]}
               onChange={handleChange}
+              className="form-input"
               required
             />
           </div>
@@ -381,7 +407,7 @@ const Form = () => {
 
         {/* Phone number field */}
         <div className="form-group">
-          <label>Phone Number</label>
+          <label className="form-label">Phone Number</label>
           <input
             type="tel"
             name="phoneNumber"
@@ -389,11 +415,12 @@ const Form = () => {
             onChange={handleChange}
             pattern="[0-9]{10}"
             title="Phone number must be 10 digits"
+            className="form-input"
             required
           />
         </div>
 
-        <button type="submit" className="form-button">
+        <button type="submit" className="form-button" disabled={!isValid || isSubmitting}>
           {data.button.text}
         </button>
 
