@@ -7,18 +7,17 @@ import { FaRegEnvelope } from "react-icons/fa";
 import Link from 'next/link';
 import { IoIosArrowDown } from "react-icons/io";
 import { FaBars, FaTimes } from "react-icons/fa"; // Hamburger icon for mobile
+import data from "./Navbar.json"
 
 const Navbar = ({ host }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false); // To control mobile menu visibility
 
-  // Detect screen width and update isMobile state
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
-
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
@@ -58,76 +57,6 @@ const Navbar = ({ host }) => {
         </div>
       </div>
 
-      {/* <nav id="navbar">
-        <div>
-          <a href={host}>
-            <Image
-              className='logo-main'
-              src={logo}
-              alt="go top"
-              width={300}
-              height={200}
-              style={{ cursor: 'pointer' }}
-            />
-          </a>
-        </div>
-        <div style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
-      {isMobile ? (
-        <div className="mobile-menu">
-          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-            <FaBars style={{ fontSize: '30px', cursor: 'pointer' }} />
-          </div>
-          {menuOpen && (
-            <div className="mobileMenuContent">
-              {data?.menu?.map((item) => (
-                <span className="fusion-menu-item" key={item.id}>
-                  <Link href={item.link === "" ? host : `${host}${item.link}`}>
-                    {item.text}
-                  </Link>
-                  {item.subOption?.length > 0 && (
-                    <div className="sub-menu">
-                      {item.subOption.map((subItem) => (
-                        <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
-                          {subItem.text}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </span>
-              ))}
-            </div>
-          )}
-        </div>
-      ) : (
-        <div className="fusion-custom-menu fusion-menu-element-list">
-          {data?.menu?.map((item) => (
-            <span className="fusion-menu-item" key={item.id}>
-              <span className="transition-center-grow"></span>
-              <Link href={item.link === "" ? host : `${host}${item.link}`}>
-                {item.subOption?.length > 0 ? (
-                  <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
-                    {item.text} <IoIosArrowDown />
-                  </div>
-                ) : (
-                  item.text
-                )}
-              </Link>
-              {item.subOption?.length > 0 && (
-                <div className="sub-menu">
-                  {item.subOption.map((subItem) => (
-                    <Link key={subItem.id} href={subItem.link === "" ? host : `${host}${subItem.link}`}>
-                      {subItem.text}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </span>
-          ))}
-        </div>
-      )}
-    </div>
-      </nav> */}
-
       <nav id="navbar">
         <div>
           <a href={host}>
@@ -135,8 +64,8 @@ const Navbar = ({ host }) => {
               className='logo-main'
               src={logo}
               alt="go top"
-              width={300}
-              height={200}
+              width={250}
+              height={180}
               style={{ cursor: 'pointer' }}
             />
           </a>
@@ -210,7 +139,6 @@ const Navbar = ({ host }) => {
         </div>
       </nav>
 
-
       <section
         className="to-top-container to-top-right"
         aria-labelledby="awb-to-top-label"
@@ -232,88 +160,25 @@ const Navbar = ({ host }) => {
 export default Navbar;
 
 
-let data = {
-  "header": "Approved By Gramin Skill Development Mission (GSDM)",
-  "collaboration": "A Collaboration with Merchant Navy Help Desk",
-  "email": "msymarineacademy@gmail.com",
-  "buttons": [
-    {
-      "id": "1",
-      "text": "EXAM HALL TICKET",
-      "link": `/hallticket`
-    },
-    {
-      "id": "2",
-      "text": "APPOINTMENT LETTER",
-      "link": ""
-    },
-    {
-      "id": "3",
-      "text": "SELECTION LETTER",
-      "link": ""
-    }
-  ],
-  "menu": [
-    {
-      "id": "1",
-      "text": "HOME",
-      "link": "",
-      "subOption": []
-    },
-    {
-      "id": "2",
-      "text": "FLEET",
-      "link": "",
-      "subOption": []
-    },
-    {
-      "id": "3",
-      "text": "MERCHANT NAVY COURSES",
-      "link": "",
-      "subOption": [
-        {
-          "id": "1",
-          "text": "STCW BASIC COURSE",
-          "link": ""
-        },
-        {
-          "id": "2",
-          "text": "TRAINEE MARINE ENGINEERS",
-          "link": ""
-        },
-        {
-          "id": "3",
-          "text": "GP RATING",
-          "link": ""
-        },
-        {
-          "id": "4",
-          "text": "DNS COURSE",
-          "link": ""
-        },
-        {
-          "id": "5",
-          "text": "BSC NAUTICAL SCIENCE",
-          "link": ""
-        },
-        {
-          "id": "6",
-          "text": "GRADUATE MECHANICAL ENGINEER",
-          "link": ""
-        },
-      ]
-    },
-    {
-      "id": "4",
-      "text": "GALLERY",
-      "link": "",
-      "subOption": []
-    },
-    {
-      "id": "5",
-      "text": "CONTACT",
-      "link": "",
-      "subOption": []
-    },
-  ]
-}
+{/* <div className="testimonials-section-wrapper">
+        <div className="testimonials-section">
+          <div className="headings-wrapper">
+            <p className="testimonials-heading">{data.testimonialsSection.heading}</p>
+            <p>{data.testimonialsSection.subheading}</p>
+          </div>
+          <div className="testimonials">
+            {currentTestimonials.map((testimonial, index) => (
+              <div className="testimonial_wrapper" key={index}>
+                <div className="user">
+                  <Image src={testimonial.image} alt="User" width={95} height={95} loading="lazy" />
+                </div>
+                <div className="testimonial">{testimonial.text}</div>
+                <div className="user-info">
+                  <span className="user-name">{testimonial.name}</span>
+                  <span className="user-post">{testimonial.post}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}

@@ -1,0 +1,85 @@
+{
+    "header": "Approved By Gramin Skill Development Mission (GSDM)",
+    "collaboration": "A Collaboration with Merchant Navy Help Desk",
+    "email": "msymarineacademy@gmail.com",
+    "buttons": [
+        {
+            "id": "1",
+            "text": "EXAM HALL TICKET",
+            "link": "/hallticket"
+        },
+        {
+            "id": "2",
+            "text": "APPOINTMENT LETTER",
+            "link": ""
+        },
+        {
+            "id": "3",
+            "text": "SELECTION LETTER",
+            "link": ""
+        }
+    ],
+    "menu": [
+        {
+            "id": "1",
+            "text": "HOME",
+            "link": "",
+            "subOption": []
+        },
+        {
+            "id": "2",
+            "text": "FLEET",
+            "link": "",
+            "subOption": []
+        },
+        {
+            "id": "3",
+            "text": "MERCHANT NAVY COURSES",
+            "link": "",
+            "subOption": [
+                {
+                    "id": "1",
+                    "text": "STCW BASIC COURSE",
+                    "link": ""
+                },
+                {
+                    "id": "2",
+                    "text": "TRAINEE MARINE ENGINEERS",
+                    "link": ""
+                },
+                {
+                    "id": "3",
+                    "text": "GP RATING",
+                    "link": ""
+                },
+                {
+                    "id": "4",
+                    "text": "DNS COURSE",
+                    "link": ""
+                },
+                {
+                    "id": "5",
+                    "text": "BSC NAUTICAL SCIENCE",
+                    "link": ""
+                },
+                {
+                    "id": "6",
+                    "text": "GRADUATE MECHANICAL ENGINEER",
+                    "link": ""
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "text": "GALLERY",
+            "link": "",
+            "subOption": []
+        },
+        {
+            "id": "5",
+            "text": "CONTACT",
+            "link": "",
+            "subOption": []
+        }
+    ]
+}

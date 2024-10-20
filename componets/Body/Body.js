@@ -1,306 +1,161 @@
-"use client"
-import React, { useState, useEffect } from 'react'
-import "./Body.css"
+"use client";
+import React, { useState, useEffect, useMemo } from "react";
+import "./Body.css";
 import Image from "next/image";
-import missionIcon from "../../public/GSDM-400x400.png"
-import sliderImage1 from "../../public/Slider/2.jpg"
-import sliderImage2 from "../../public/Slider/3.jpg"
-import sliderImage3 from "../../public/Slider/4.jpg"
-import sliderImage4 from "../../public/Slider/5.jpg"
-import sliderImage5 from "../../public/Slider/6.jpg"
+import missionIcon from "../../public/GSDM-400x400.png";
+import sliderImage1 from "../../public/Slider/2.jpg";
+import sliderImage2 from "../../public/Slider/3.jpg";
+import sliderImage3 from "../../public/Slider/4.jpg";
+import sliderImage4 from "../../public/Slider/5.jpg";
+import sliderImage5 from "../../public/Slider/6.jpg";
+import data from "./Body.json";
+import { GrNext, GrPrevious } from "react-icons/gr";
 
-import { GrNext } from "react-icons/gr";
-import { GrPrevious } from "react-icons/gr";
+const Body = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const testimonials = data.testimonialsSection.testimonials;
 
-let data = {
-    banner: {
-        heading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
-        subheading: 'A Marine Education Platform',
-        linkText: 'Contact Now',
-        linkHref: '#'
-    },
-    images: [
-        sliderImage1,
-        sliderImage2,
-        sliderImage3,
-        sliderImage4,
-        sliderImage5
-    ],
-    approvals: {
-        icon: missionIcon,
-        heading: 'Approved By Gramin Skill Development Mission (GSDM)',
-        description: `We’re thrilled to announce that 
-            <em>
-                <strong>
-                    Marine Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!
-                </strong>
-            </em>
-            This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!`
-    },
-    academyInfo: {
-        heading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
-        subheading: 'One of the Best Marine Education Platform',
-        cards: [
-            {
-                imgSrc: 'support.png',
-                imgAlt: 'Support',
-                title: 'SUPPORT',
-                description: 'Our support team work for complete preparation of courses by D.G shipping Govt. of India or RPSL with well versed & experienced mariners team.'
-            },
-            {
-                imgSrc: 'rocket.png',
-                imgAlt: 'Hassle Free Process',
-                title: 'HASSLE FREE PROCESS',
-                description: 'MSY ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.'
-            },
-            {
-                imgSrc: 'mission.png',
-                imgAlt: 'Mission',
-                title: 'MISSION',
-                description: 'Your Bright Future under maritime Industry with end-to-end solutions for MARITIME EDUCATION CONSULTANCY & SHIP MANAGEMENT is our core mission.'
-            },
-            {
-                imgSrc: 'vision.png',
-                imgAlt: 'Vision',
-                title: 'VISION',
-                description: 'To provide quality education and maritime consultancy to aspiring as well as existing marine Personnel.'
-            }
-        ]
-    },
-    interfaceLearning: {
-        heading: 'Interface Friendly Learning At',
-        subheading: 'MSY MARINE ACADEMY & MANAGEMENT SERVICES',
-        description1: 'MSY is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.',
-        description2: 'Marine Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Marine Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.'
-    },
-    testimonials: {
-        heading: 'Our Students Love Us',
-        subheading: 'Don’t Just Take Our Word For It, Read It From Them',
-        feedbacks: [
-            {
-                text: 'Good staff members I have worked with Marine Academy they doing very well',
-                name: 'Tara Chouhan',
-                imgSrc: 'user-image.svg'
-            },
-            {
-                text: 'Absolutely best company for adm. in dg approved colleges and 100% placement guarantee',
-                name: 'Saurabh Pande',
-                imgSrc: 'user-image.svg'
-            },
-            {
-                text: 'Today i got sponsorship for dns admission through Marine Academy rahul sir doing great work they provide good dg college with 100% placement thank u sir',
-                name: 'Shubham Sharma',
-                imgSrc: 'user-image.svg'
-            }
-        ]
-    }
-};
+  const images = useMemo(
+    () => [sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5],
+    []
+  );
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
 
-const Body = ({host}) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [images, setImages] = useState([sliderImage1, sliderImage2, sliderImage3, sliderImage4, sliderImage5]);
+    return () => clearInterval(interval);
+  }, [images]);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentImageIndex((prevIndex) =>
-                prevIndex === images.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
+    }, 6000); // Change every 6 seconds
 
-        return () => clearInterval(interval);
-    }, [images.length]);
+    return () => clearInterval(interval);
+  }, [testimonials]);
 
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+  const currentTestimonials = testimonials.slice(currentIndex, currentIndex + 2);
 
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
-        );
-    };
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
 
-    return (
-        <div>
-            {/* Image */}
-            <div id="image-container">
-                <div
-                    style={{
-                        backgroundImage: `url(${images[currentImageIndex]?.src})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        width: '100%',
-                        height: '100%',
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        zIndex: -1
-                    }}
-                >
-                    <div className='banner_content-wrapper'>
-                        <div className='banner_content'>
-                            <div className='banner-heading with-bg' style={{ fontSize: '44px' }}>{data.banner.heading}</div>
-                            <h3 className='banner-suheading'>{data.banner.subheading}</h3>
-                            <a className='banner-link with-bg' href='#'>{data.banner.linkText}</a>
-                        </div>
-                    </div>
-                </div>
-                <button
-                    onClick={prevImage}
-                    className="nav-button previous" // Add className for hover effect
-                >
-                    <GrPrevious />
-                </button>
-                <button
-                    onClick={nextImage}
-                    className="nav-button next" // Add className for hover effect
-                >
-                    <GrNext />
-                </button>
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  return (
+    <div>
+      <div id="image-container">
+        <div
+          style={{ backgroundImage: `url(${images[currentImageIndex].src})` }}
+          className="background-image"
+        >
+          <div className="banner_content-wrapper">
+            <div className="banner_content">
+              <div className="banner-heading with-bg">
+                {data.banner.heading}
+              </div>
+              <h3 className="banner-suheading" style={{ background: "#00000066" }}>
+                {data.banner.subheading}
+              </h3>
+              <a className="banner-link with-bg" href={data.banner.linkUrl}>
+                {data.banner.linkText}
+              </a>
             </div>
-            {/* Approval Div */}
-            <div className='body display'>
-                {/* Image div */}
-                <div>
-                    <Image
-                        src={missionIcon}
-                        alt="go top"
-                        width={300}
-                        height={300}
-                    />
-                </div>
-                {/* Text dic */}
-                <div className='text-img-section'>
-                    <div>
-                        <h1 className='heading primary'>
-                            Approved By Gramin Skill Development Mission (GSDM)
-                        </h1>
-                    </div>
-                    <div style={{ margin: "20px 0" }} />
-                    <div style={{ color: "rgba(255,255,255,1)", fontSize: "14px" }}>
-                        <p style={{ lineHeight: "1.8", }}>
-                            We’re thrilled to announce that
-                            <em>
-                                <strong>
-                                    Marine Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!
-                                </strong>
-                            </em>
-                            This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div className="container">
-                <h1>MSY MARINE ACADEMY & MANAGEMENT SERVICES</h1>
-                <p>One of the Best Marine Education Platform</p>
-                <div className="card-container">
-                    <div className="card">
-                        <img src="support.png" alt="Support" style={{ width: "120px", height: "120px" }} />
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
-                        <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>SUPPORT</h3>
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
-                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >Our support team work for complete preparation of courses by D.G shipping Govt. of India or RPSL with well versed & experienced mariners team.</p>
-                    </div>
-                    <div className="card">
-                        <img src="rocket.png" alt="Hassle Free Process" style={{ width: "120px", height: "120px" }} />
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
-                        <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>HASSLE FREE PROCESS</h3>
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
-                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }} >MSY ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes.</p>
-                    </div>
-                    <div className="card">
-                        <img src="mission.png" alt="Mission" style={{ width: "120px", height: "120px" }} />
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
-                        <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>MISSION</h3>
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
-                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }}>Your Bright Future under maritime Industry with end-to-end solutions for MARITIME EDUCATION CONSULTANCY & SHIP MANAGEMENT is our core mission.</p>
-                    </div>
-                    <div className="card">
-                        <img src="vision.png" alt="Vision" style={{ width: "120px", height: "120px" }} />
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "40px auto 0", width: "100%" }}></div>
-                        <h3 style={{ margin: "0px", textAlign: "center", fontSize: "22px", padding: "0px", lineHeight: "1.2", fontWeight: "700" }}>VISION</h3>
-                        <div  className="fusion-full-width-sep" style={{ display: "flex", alignItems: "center", margin: "10px auto 0", width: "100%" }}></div>
-                        <p style={{ textAlign: "center", marginTop: "0px", marginBottom: "20px", lineHeight: "2.14" }}>To provide to quality education and maritime consultancy to aspiring as well as existing marine Personnel.</p>
-                    </div>
-                </div>
-            </div>
-            <div className='Interface display'>
-                <div  className="interface-inner">
-                    <p className='heading primary' style={{ fontSize: "48px", lineHeight:"1.2", fontWeight:"700", color:"rgba(255,255,255,1)", padding:"10px" }}>Interface Friendly Learning At</p>
-                    <div style={{ color: "white", fontSize: "22px", lineHeight: "30px", marginBottom: "20px" }}>MSY MARINE ACADEMY & MANAGEMENT SERVICES</div>
-                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>MSY is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.</div>
-                    <div style={{ textAlign: "justify", marginTop: 0, marginBottom: "20px", color: "#ffffff", lineHeight: "2.14", fontSize: "14px" }}>Marine Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Marine Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications.</div>
-                </div>
-            </div>
-            <div className="testimonials-section-wrapper">
-                <div className="testimonials-section">
-                    <div className="headings-wrapper">
-                        <p style={{fontSize:"48px", padding:"18px 18px", fontWeight:"700"}}>Our Students Love Us</p>
-                        <p>Don’t Just Take Our Word For It, Read It From Them</p>
-                    </div>
-                    <div  className="testimonials">
-                        <div className="testimonial_wrapper">
-                            <div className="testimonial">
-                                The team is extremely professional, and the service exceeded my expectations. I highly recommend them for anyone looking for quality and reliability.                                
-                            </div>
-                            <div className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span className="user-name">Narayan Rangari</span>
-                            </div>
-                        </div>
-                        <div className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                Great experience! The process was smooth and well-managed. They truly deliver on their promises.
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Shivani Dable</span>
-                            </div>
-                        </div>
-                        <div  className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                I was impressed with their level of expertise and attention to detail. The staff made the entire process easy and stress-free.
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Mayur Kushwaha</span>
-                            </div>
-                        </div>
-                        <div  className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                Excellent service! They provided clear guidance and support throughout, ensuring a seamless experience.
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span  className="user-name">Ashna dube</span>
-                            </div>
-                        </div>
-                        <div  className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                Top-notch company with exceptional customer service. The staff is knowledgeable, and their dedication is evident in every interaction.
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span className="user-name">Danish Khan</span>
-                            </div>
-                        </div>
-                        <div  className="testimonial_wrapper">
-                            <div  className="testimonial">
-                                Highly satisfied with the service! They offer comprehensive support and deliver results as promised.
-                            </div>
-                            <div  className="user">
-                                <img src="user-image.svg" alt="User" />
-                                <span className="user-name">Priyanshu Kumar</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    )
-}
+        <button onClick={prevImage} className="nav-button previous">
+          <GrPrevious />
+        </button>
+        <button onClick={nextImage} className="nav-button next">
+          <GrNext />
+        </button>
+      </div>
+
+      <div className="body display">
+        <div>
+          <Image src={missionIcon} alt="go top" width={300} height={300} priority={true} />
+        </div>
+        <div className="text-img-section">
+          <div>
+            <h1 className="heading primary">{data.approvalSection.heading}</h1>
+          </div>
+          <div className="content-spacing" />
+          <div className="approval-text">
+            <p>
+              {data.approvalSection.text1}
+              <b>{data.approvalSection.boldContent}</b>
+              {data.approvalSection.text2}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <h1>{data.cardsSection.title}</h1>
+        <p>{data.cardsSection.subtitle}</p>
+        <div className="card-container">
+          {data.cardsSection.cards.map((card, index) => (
+            <div className="card" key={index}>
+              {card?.image && (
+                <Image src={card?.image} alt={card.title} className="card-image" width={150} height={150} />
+              )}
+              <div className="separator large"></div>
+              <h3 className="card-title">{card.title}</h3>
+              <br />
+              <div className="separator small"></div>
+              <p className="card-description">{card.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="Interface display">
+        <div className="interface-inner">
+          <p className="interface-heading">{data.interfaceSection.heading}</p>
+          <div className="interface-subheading">{data.interfaceSection.subheading}</div>
+          {data.interfaceSection.paragraphs.map((paragraph, index) => (
+            <div key={index} className="interface-paragraph">
+              {paragraph}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="testimonials-section-wrapper">
+        <div className="testimonials-section">
+          <div className="headings-wrapper">
+            <p className="testimonials-heading">{data.testimonialsSection.heading}</p>
+            <p>{data.testimonialsSection.subheading}</p>
+          </div>
+          <div className="testimonials">
+            {currentTestimonials.map((testimonial, index) => (
+              <div className="testimonial_wrapper" key={index}>
+                <div className="user">
+                  <Image src={testimonial.image} alt="User" width={95} height={95} loading="lazy" />
+                </div>
+                <div>
+                  <div className="testimonial">{testimonial.text}</div>
+                  <div className="user-info" style={{ textAlign:"left; padding: 0" }}>
+                    <span className="user-name">- {testimonial.name}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Body;

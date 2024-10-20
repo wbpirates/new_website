@@ -1,0 +1,85 @@
+
+{
+    "banner": {
+        "heading": "Welcome to Marine Academy Pvt. Ltd.",
+        "subheading": "Where Ambition Meets the Ocean",
+        "linkText": "Learn More",
+        "linkUrl": "#"
+    },
+    "approvalSection": {
+        "heading": "Approved By Gramin Skill Development Mission (GSDM)",
+        "text1": "We’re thrilled to announce that ", 
+        "boldContent":"Marine Academy is now officially approved by the Gramin Skill Development Mission (GSDM)!.",
+        "text2":" This milestone reflects our unwavering commitment to providing top-notch marine education and skill development programs that meet the highest standards. Our partnership with GSDM opens up a plethora of opportunities for rural youth, equipping them with the necessary skills to thrive in the marine sector. Join us as we embark on this exciting journey to empower and transform the lives of our students. Welcome aboard!"
+    },
+    "cardsSection": {
+        "title": "MSY MARINE ACADEMY & MANAGEMENT SERVICES",
+        "subtitle": "One of the Best Marine Education Platform",
+        "cards": [
+            {
+                "image": "/support.png",
+                "title": "SUPPORT",
+                "description": "Our support team work for complete preparation of courses by D.G shipping Govt. of India or RPSL with well versed & experienced mariners team."
+            },
+            {
+                "image": "/rocket.png",
+                "title": "HASSLE FREE PROCESS",
+                "description": "MSY ensures the whole process & preparation to be smooth & glitch-free for both the aspiring candidates & the maritime institutes."
+            },
+            {
+                "image": "/mission.png",
+                "title": "MISSION",
+                "description": "Your Bright Future under maritime Industry with end-to-end solutions for MARITIME EDUCATION CONSULTANCY & SHIP MANAGEMENT is our core mission."
+            },
+            {
+                "image": "/vision.png",
+                "title": "VISION",
+                "description": "To provide to quality education and maritime consultancy to aspiring as well as existing marine Personnel."
+            }
+        ]
+    },
+    "interfaceSection": {
+        "heading": "Interface Friendly Learning At",
+        "subheading": "MSY MARINE ACADEMY & MANAGEMENT SERVICES",
+        "paragraphs": [
+            "MSY is an independent Crew management & Maritime training company which is incorporated with Govt. of India and ISO Certified 9001:2015 by group that offers a comprehensive range of high quality marine services. We are committed to highest level of quality, professionalism and strong credibility as a proactive, forward thinking marine manpower Employment Company. Our core competence is in training and manning. We are committed to training of general purpose ratings by imparting hands on training on all important aspects of good seamanship practices and general maintenance of the engine of the ship. Our ultimate goal is to provide well trained and qualified ratings to the shipping industry, which certainly is the need of every ship owner today world- wide.",
+            "Marine Academy is dedicated to select and train young Youth to level of high competence that allows them, to serve on any type of vessel in the world through clearing IMU-CET & Pre sea training. At Marine Academy We understand that a Preparatory Class is only as Effective as the Teacher teaching it, and all of our Tutors have Superior Educational and Maritime Professional Qualifications."
+        ]
+    },
+    "testimonialsSection": {
+        "heading": "Our Students Love Us",
+        "subheading": "Don’t Just Take Our Word For It, Read It From Them",
+        "testimonials": [
+            {
+                "text": "The team is extremely professional, and the service exceeded my expectations. I highly recommend them for anyone looking for quality and reliability.",
+                "name": "Vishal Shah",
+                "image": "user-image.svg"
+            },
+            {
+                "text": "Great experience! The process was smooth and well-managed. They truly deliver on their promises.",
+                "name": "Pritam Yada",
+                "image": "user-image.svg"
+            },
+            {
+                "text": "I was impressed with their level of expertise and attention to detail. The staff made the entire process easy and stress-free.",
+                "name": "Mayur Kushwaha",
+                "image": "user-image.svg"
+            },
+            {
+                "text": "Excellent service! They provided clear guidance and support throughout, ensuring a seamless experience.",
+                "name": "Saurabh Pande",
+                "image": "user-image.svg"
+            },
+            {
+                "text": "Top-notch company with exceptional customer service. The staff is knowledgeable, and their dedication is evident in every interaction.",
+                "name": "Danish Khan",
+                "image": "user-image.svg"
+            },
+            {
+                "text": "Highly satisfied with the service! They offer comprehensive support and deliver results as promised.",
+                "name": "Priyanshu Kumar",
+                "image": "user-image.svg"
+            }
+        ]
+    }
+}
