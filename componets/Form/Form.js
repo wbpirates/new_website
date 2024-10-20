@@ -222,7 +222,7 @@ const Form = () => {
         html2canvas: { scale: 2 },
         jsPDF: { unit: "px", format: "a4", orientation: "portrait" }, // Use A4 size
       };
-      const customWidth = 800;
+      const customWidth = 700;
       const customHeight = 1000;
       opt.jsPDF.format = [customWidth, customHeight];
 
