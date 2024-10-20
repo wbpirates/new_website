@@ -124,8 +124,14 @@ const Form = () => {
             font-weight: bold;
           }
 
+          ul, ol {
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
           li {
             font-size: 13px;
+              ;
           }
         </style>
       </head>
@@ -202,16 +208,21 @@ const Form = () => {
   };
 
   const handleView = () => {
-    if (result) {
-      const htmlContent = generateAdmitCardHTML(result, pdfShipImage, pdfManImage, pdfFooterImage);
-      const newWindow = window.open();
-      newWindow.document.open();
-      newWindow.document.write(htmlContent);
-      newWindow.document.close();
-    } else {
-      toast.error("No data found");
-    }
+    const htmlContent = generateAdmitCardHTML(result, pdfShipImage, pdfManImage, pdfFooterImage);
+    localStorage.setItem('admitCardHTML', htmlContent); // Save to localStorage
+
+    const newWindow = window.open();
+    newWindow.document.write(htmlContent);
+    newWindow.document.close();
   };
+
+  // Add this logic to handle loading from localStorage on reload
+  if (window.location.href === 'about:blank' && localStorage.getItem('admitCardHTML')) {
+    const admitCardHTML = localStorage.getItem('admitCardHTML');
+    document.write(admitCardHTML);
+    document.close();
+  }
+
 
   const handleDownload = () => {
     if (result) {
