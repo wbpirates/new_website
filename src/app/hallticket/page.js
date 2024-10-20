@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../../componets/Navbar/Navbar';
-import Footer from '../../../componets/Footer/Footer';
+import Navbar from '../../../components/Navbar/Navbar';
+import Footer from '../../../components/Footer/Footer';
 import dynamic from 'next/dynamic';
-const Form = dynamic(() => import('../../../componets/Form/Form'), { ssr: false });
+const Form = dynamic(() => import('../../../components/Form/Form'), { ssr: false });
 import { API_HOST } from "../../../configs/api.config.js";
 
 const page = () => {

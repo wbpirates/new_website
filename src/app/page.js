@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Navbar from "../../componets/Navbar/Navbar.js";
-import Footer from "../../componets/Footer/Footer.js";
-import Body from "../../componets/Body/Body.js";
+import Navbar from "../../components/Navbar/Navbar.js";
+import Footer from "../../components/Footer/Footer.js";
+import Body from "../../components/Body/Body.js";
 import { API_HOST } from "../../configs/api.config.js";
 
 export default function Home() {
