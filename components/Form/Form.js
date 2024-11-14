@@ -298,14 +298,15 @@ const Form = () => {
         };
 
         // Convert the time from decimal to HH:MM AM/PM format
-        const decimalTimeToTimeString = (decimalTime) => {
-          const hours = Math.floor(decimalTime * 24);
-          const minutes = Math.round((decimalTime * 24 * 60) % 60);
-          const ampm = hours >= 12 ? 'PM' : 'AM';
-          const formattedHours = hours % 12 || 12; // Convert to 12-hour format
-          const formattedMinutes = minutes.toString().padStart(2, '0');
-          return `${formattedHours}:${formattedMinutes} ${ampm}`;
-        };
+       const decimalTimeToTimeString = (decimalTime) => {
+        const totalMinutes = Math.round(decimalTime * 24 * 60);
+        const hours = Math.floor(totalMinutes / 60);
+        const minutes = totalMinutes % 60;
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const formattedHours = (hours % 12) || 12; // Convert to 12-hour format
+        const formattedMinutes = minutes.toString().padStart(2, '0');
+        return `${formattedHours}:${formattedMinutes} ${ampm}`;
+      };
 
         // Format the date and time fields
         found['Examination Date'] = excelDateToJSDate(found['Examination Date']).toLocaleDateString('en-GB'); // DD-MM-YYYY format
