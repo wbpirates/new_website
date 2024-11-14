@@ -142,7 +142,7 @@ const Form = () => {
               <img src=${pdfShipImage?.src}>
             </div>
             <div class="form-title">
-              <h3>SEA FARES ENTRANCE ELIGIBILITY TEST (2024-25)</h3>
+              <h3>SEAFARES ENTRANCE ELIGIBILITY TEST (2024-25)</h3>
               <h5>APPROVED BY MINISTERIAL CORPORATION OF ADMINISTRATION</h5>
               <h5>[EXAMINATION HALL TICKET]</h5>
             </div>
