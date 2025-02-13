@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import "./Navbar.css";
-import logo from "../../public/Navbar/logo.png";
+import logo from "../../public/Navbar/logo.jpeg";
 import Image from "next/image";
 import { FaRegEnvelope } from "react-icons/fa";
 import Link from 'next/link';

@@ -1,0 +1,12 @@
+@import url("../Form/Form.css");
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.required-symbol {
+    color: red;
+    margin-left: 5px;
+}

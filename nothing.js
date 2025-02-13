@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "./Body.css";
+import { useRouter } from "next/navigation";
 import missionIcon from "../../public/GSDM-400x400.png";
 import sliderImage1 from "../../public/Slider/2.jpg";
 import sliderImage2 from "../../public/Slider/3.jpg";
@@ -14,10 +16,10 @@ import data from "./Body.json";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
 const Body = () => {
+  const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const testimonials = data.testimonialsSection.testimonials;
-
   const images = useMemo(
     () => [
       {
@@ -25,26 +27,28 @@ const Body = () => {
         imageContent: {
           heading: "Welcome to Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
-          linkText: "Learn More",
-          linkUrl: "#",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
       {
-        src:sliderImage2,
+        src: sliderImage2,
         imageContent: {
           heading: "SEAFARER'S HUMAN RESOURCES",
-          subheading: "We provide complete human resource solution for complex maritime operations",
-          linkText: "Learn More",
-          linkUrl: "#",
+          subheading:
+            "We provide complete human resource solution for complex maritime operations",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
       {
         src: sliderImage7,
         imageContent: {
           heading: "EXPLORE AND EXPAND YOURSELF",
-          subheading: "By opting for a merchant navy career, individuals can combine a lot of different facets and gain a lot of exposure ",
-          linkText: "Learn More",
-          linkUrl: "#",
+          subheading:
+            "By opting for a merchant navy career, individuals can combine a lot of different facets and gain a lot of exposure ",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
       {
@@ -52,8 +56,8 @@ const Body = () => {
         imageContent: {
           heading: "Welcome to Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
-          linkText: "Learn More",
-          linkUrl: "#",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
       {
@@ -61,8 +65,8 @@ const Body = () => {
         imageContent: {
           heading: "Welcome to Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
-          linkText: "Learn More",
-          linkUrl: "#",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
       {
@@ -70,8 +74,8 @@ const Body = () => {
         imageContent: {
           heading: "Welcome to Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
-          linkText: "Learn More",
-          linkUrl: "#",
+          linkText: "Apply here",
+          linkUrl: "/apply",
         },
       },
     ],
@@ -132,12 +136,15 @@ const Body = () => {
                   <h3
                     className="banner-suheading"
                     style={{ background: "#00000066" }}
+                    onClick={() => router.push(image.imageContent.linkUrl)}
                   >
                     {image.imageContent.subheading}
                   </h3>
-                  <a className="banner-link with-bg" href={image.imageContent.linkUrl}>
+                  <Link href={image.imageContent.linkUrl}
+                    className="banner-link with-bg"
+                  >
                     {image.imageContent.linkText}
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
