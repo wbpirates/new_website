@@ -23,7 +23,7 @@ const Body = () => {
       {
         src: sliderImage1,
         imageContent: {
-          heading: "Welcome to Marine Academy Pvt. Ltd.",
+          heading: "Welcome to MSY Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
           linkText: "Learn More",
           linkUrl: "#",
@@ -50,7 +50,7 @@ const Body = () => {
       {
         src: sliderImage3,
         imageContent: {
-          heading: "Welcome to Marine Academy Pvt. Ltd.",
+          heading: "Welcome to MSY Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
           linkText: "Learn More",
           linkUrl: "#",
@@ -59,7 +59,7 @@ const Body = () => {
       {
         src: sliderImage4,
         imageContent: {
-          heading: "Welcome to Marine Academy Pvt. Ltd.",
+          heading: "Welcome to MSY Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
           linkText: "Learn More",
           linkUrl: "#",
@@ -68,7 +68,7 @@ const Body = () => {
       {
         src: sliderImage5,
         imageContent: {
-          heading: "Welcome to Marine Academy Pvt. Ltd.",
+          heading: "Welcome to MSY Marine Academy Pvt. Ltd.",
           subheading: "Where Ambition Meets the Ocean",
           linkText: "Learn More",
           linkUrl: "#",
