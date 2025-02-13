@@ -135,9 +135,9 @@ const Body = () => {
                   >
                     {image.imageContent.subheading}
                   </h3>
-                  <a className="banner-link with-bg" href={image.imageContent.linkUrl}>
+                  {/* <a className="banner-link with-bg" href={image.imageContent.linkUrl}>
                     {image.imageContent.linkText}
-                  </a>
+                  </a> */}
                 </div>
               </div>
             )}
